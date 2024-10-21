@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Update Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            max-width: 600px;
+        }
+        label {
+            grid-column: 1 / 2;
+        }
+        input, select, button {
+            grid-column: 2 / 3;
+        }
+        button {
+            grid-column: 1 / 3;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Update School Schedule</h1>
+<form id="scheduleForm">
+    <label for="day">Day:</label>
+    <select id="day" name="day" required>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+    </select>
+
+    <label for="grade">Grade:</label>
+    <select id="grade">
+        <option value="" disabled selected>Select Class</option> <!-- Default Option -->
+        <option value="5">Grade 5</option>
+        <option value="6">Grade 6</option>
+        <option value="7">Grade 7</option>
+    </select>
+    <label for="section">Section:</label>
+    <input type="text" id="section" name="section" required placeholder="e.g., A">
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required placeholder="e.g., Mathematics">
+
+    <label for="teacher">Teacher:</label>
+    <input type="text" id="teacher" name="teacher" required placeholder="e.g., G.M">
+
+    <label for="timeSlot">Time Slot:</label>
+    <input type="text" id="timeSlot" name="timeSlot" required placeholder="e.g., 9:00 - 9:45">
+
+    <button type="submit">Update Schedule</button>
+</form>
+
+<script>
+    document.getElementById('scheduleForm').addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const formData = {
+            day: document.getElementById('day').value,
+            class: document.getElementById('grade').value,
+            section: document.getElementById('section').value,
+            subject: document.getElementById('subject').value,
+            teacher: document.getElementById('teacher').value,
+            timeSlot: document.getElementById('timeSlot').value
+        };
+
+        try {
+            const response = await fetch('/update-schedule', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            const result = await response.json();
+            alert(result.message);
+        } catch (error) {
+            alert('Error updating schedule: ' + error.message);
+        }
+    });
+</script>
+
+</body>
+</html>

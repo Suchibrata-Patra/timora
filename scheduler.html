@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Povisional.</title>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="Asset/CSS/style.css">
+  <link rel="stylesheet" href="Asset/CSS/popup.css">
+  <script src="Asset/JS/fetcher.js"></script>
+  <script src="Asset/JS/scheduler.js"></script>
+  <script src="Asset/JS/date_detector.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = today.toLocaleDateString(undefined, options); // Format the current date
+
+      // Use innerHTML to insert HTML content
+      document.getElementById('currentDate').innerHTML = `<p style="border:none;border-radius:5px;padding:4px 5px;display:inline;">${formattedDate}</p>`;
+    });
+
+
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  </style>
+
+  <style>
+    @keyframes rotate {
+      from {
+        transform: rotate(360deg);
+      }
+
+      to {
+        transform: rotate(0deg);
+      }
+    }
+
+
+    .logo-img {
+      height: 45px;
+      /* Adjust the height as needed */
+      margin-right: 10px;
+      /* Space between the image and text */
+    }
+
+    .logo-text {
+      font-size: 24px;
+      /* Adjust the font size as needed */
+      font-weight: bold;
+      /* Make text bold for emphasis */
+      color: #333;
+      /* Text color */
+      /* Add additional styling as needed */
+    }
+  </style>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div
+    style="display: flex; align-items: center; justify-content: space-between; width: 100vw; height: 60px;color: #000000; padding: 0 30px; box-sizing: border-box;">
+    <!-- Container for Haggle and Help Button -->
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <!-- Icon Text -->
+      <!-- Logo Text -->
+      <div class="logo">
+        <img src="timora.png" alt="Timora logo" class="logo-img">
+        <span class="logo-text">Timora.</span>
+      </div>
+      <!-- Help Button -->
+      <button style=" background-color: transparent; border: none; color: #000000; font-size: 14px; cursor: pointer;
+        display: inline-flex; align-items: center; padding: 4px 8px;" id="navoptions"
+        onclick="window.location.href='Help.html';">
+        Help
+      </button>
+
+
+      <!-- Edit Schedule -->
+      <button
+        style="background-color: transparent; border: none; color: #000000; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; padding: 4px;"
+        id="navoptions" onclick="window.location.href='edit.html';">
+        Edit Schedule
+      </button>
+    </div>
+
+    <!-- Report Error Button -->
+    <button
+      style="background-color: #000000; color: #ffffff; border: none; border-radius: 20px; padding: 10px 15px; font-size: 12px; cursor: pointer; font-weight: 500; margin-right: 10%; display: flex; align-items: center;"
+      onclick="window.location.href='error_report.html';">
+      Report Error
+      <span class="material-symbols-outlined" style="font-size: 16px; margin-left: 8px; font-weight: 600;">
+        error
+      </span>
+    </button>
+  </div>
+
+  <!-- Main Content -->
+  <div
+    style="display: flex; align-items: center; justify-content: flex-start; width: 100vw; height: 20%; margin: 0; box-sizing: border-box; padding: 20px;">
+    <div
+      style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; width: 100%; max-width: 600px;">
+      <!-- Date Display -->
+      <span id="currentDate" style="font-size: 24px; font-weight: 600; color: #352626; margin-bottom: 20px;">Date
+        Here</span>
+
+      <!-- Day Picker -->
+      <label for="daySelect"
+        style="font-weight: 400; font-size: 15px; color: #000000; margin-bottom: 2px; display: flex; align-items: center;">
+        Choose the Day
+        <span class="material-symbols-outlined" style="font-size: 20px; margin-left: 8px;">
+          arrow_right_alt
+        </span>
+      </label>
+
+      <div style="position: relative; width: 100%; max-width: 400px;">
+        <select id="daySelect" onchange="loadSchedule()"
+          style="border-radius:5px; padding: 10px 20px; font-size: 18px; color: #000000; border: 2px solid #000000; background-color: #fff; width: 100%; appearance: none; -webkit-appearance: none; -moz-appearance: none; position: relative; z-index: 1;">
+          <option value=""> Select </option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday" disabled>Sunday</option>
+        </select>
+        <div
+          style="position: absolute; top: 10px; right: 10px; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #000000; pointer-events: none; z-index: 0;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="teacherSelectionSection" style="display: none; padding:2%;">
+    <div style="display: flex; align-items: center;">
+      <h3
+        style="font-weight: 400; font-size: 19px; display: inline-flex; align-items: center; margin: 0; margin-right: 20px;">
+        <span class="material-symbols-outlined" style="margin-right: 8px;">
+          select_check_box
+        </span>
+        Check all Absent Teachers
+      </h3>
+      <button id="preferencesButton" onclick="togglePreferences()"
+        style="display: inline-flex; align-items: center; background-color: #ffffff; color: rgb(212, 212, 212); border: 1px solid rgb(190, 190, 190); padding: 10px 15px; border-radius: 50px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
+        Preferences
+        <span class="material-symbols-outlined" style="font-size: 20px; margin-left: 8px;">settings</span>
+      </button>
+    </div>
+
+
+
+  
+
+
+
+
+    <div style="color: orange;font-size: 14px;padding-left: 3px;">*Numbers in Orange Denotes the Number of Classes the
+      teacher have already in the Schedule.</div>
+    <div id="teacherList">
+      <div class="checkbox-container">
+        <input type="checkbox" id="teacher1">
+        <label for="teacher1">Teacher 1</label>
+      </div>
+      <div class="checkbox-container">
+        <input type="checkbox" id="teacher2">
+        <label for="teacher2">Teacher 2</label>
+      </div>
+      <!-- Add more checkboxes and labels as needed -->
+    </div>
+
+    <button onclick="generateProvisionalRoutine()" style="display: flex; align-items: center; cursor: pointer;">
+      Generate
+      <span class="material-symbols-outlined" style="font-size: 20px; margin-left: 8px;">
+        arrow_right_alt
+      </span>
+    </button>
+
+  </div>
+
+  <div id="provisionalRoutineSection" style="display: none;padding: 2%;">
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
+      <h2 style="margin: 0;">Provisional Routine</h2>
+      <button class="print-button" onclick="printSection()"
+        style="display: inline-flex; align-items: center; padding: 10px 20px; background-color: #007AFF; color: rgb(255, 255, 255); border: none; border-radius:50px;">
+        <span class="material-symbols-outlined" style="margin-right: 5px; font-size: 20px;">
+          print
+        </span>
+        Print
+      </button>
+    </div>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Section</th>
+          <th>Original Teacher</th>
+          <th>Replacement Teacher</th>
+          <th>Time Slot</th>
+          <!-- <th>Signature</th> Added Signature column -->
+        </tr>
+      </thead>
+      <tbody id="provisionalTable">
+        <!-- Provisional routine will be dynamically added here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function showPrintSection() {
+      document.getElementById('provisionalRoutineSection').style.display = 'block';
+    }
+
+    function printSection() {
+      var printSection = document.getElementById('provisionalRoutineSection');
+      var originalDisplay = printSection.style.display;
+      printSection.style.display = 'block';
+
+      window.print();
+
+      printSection.style.display = originalDisplay; // Hide it again after printing
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const overlay = document.getElementById("preferencesOverlay");
+      overlay.style.display = "none"; // Hide the overlay initially
+
+      // Load saved preferences from localStorage if they exist
+      loadPreferences();
+    });
+
+    function togglePreferences() {
+      const overlay = document.getElementById("preferencesOverlay");
+      const preferencesSection = document.getElementById("preferencesSection");
+
+      if (overlay.style.display === "flex") {
+        preferencesSection.classList.remove("show");
+        setTimeout(() => {
+          overlay.style.display = "none";
+        }, 300); // Match the duration of the transition
+      } else {
+        overlay.style.display = "flex";
+        setTimeout(() => {
+          preferencesSection.classList.add("show");
+        }, 10); // Delay to allow display to apply
+      }
+    }
+
+    function savePreferences() {
+      // Simply hide the overlay
+      togglePreferences();
+    }
+
+
+  </script>
+
+
+
+  <div id="schedule-container" style="padding: 2%;">
+    <!-- <h3>Weekly Schedule</h3> -->
+
+  </div>
+
+  <!-- Loader HTML -->
+  <div id="loader-overlay" class="loader-overlay">
+    <div class="loader"></div>
+    <br>
+    <div class="loader-text">Generating
+      <span class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </span>
+    </div>
+
+    <link rel="stylesheet" href="Asset/CSS/animation.css">
+  </div>
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+
+</html>

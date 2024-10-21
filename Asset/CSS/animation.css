@@ -1,0 +1,38 @@
+.dots {
+    display: inline-block;
+    position: relative;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 8px;
+    /* Adjust as needed */
+    height: 8px;
+    /* Adjust as needed */
+    background-color: #000;
+    /* Adjust color as needed */
+    border-radius: 50%;
+    margin: 0 2px;
+    /* Adjust spacing between dots */
+    animation: dot-blink 1.5s infinite both;
+  }
+
+  .dot:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+
+  .dot:nth-child(3) {
+    animation-delay: 1s;
+  }
+
+  @keyframes dot-blink {
+
+    0%,
+    100% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }

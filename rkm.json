@@ -1,0 +1,785 @@
+{
+  "schedule": {
+    "Monday": [
+
+      { "class": "Grade 5", "section": "A", "subject": "Bengali", "teacher": "S.S", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "A", "subject": "History", "teacher": "A.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "A", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "A", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "A", "subject": "E.Sc", "teacher": "S.K.J", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:20 - 15:55" },
+
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "A.H", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "B", "subject": "E.Sc", "teacher": "D.G", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "B", "subject": "Comp", "teacher": "A.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "B", "subject": "History", "teacher": "S.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "B", "subject": "Geography", "teacher": "S.D", "timeSlot": "15:20 - 15:55" },
+
+
+      { "class": "Grade 6", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "A.H", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "A", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "G.C.H", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "A", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:55 - 16:30" },
+
+
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "B", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "B", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "B", "subject": "Comp", "teacher": "S.S.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "15:55 - 16:30" },
+
+      
+        { "class": "Grade 7", "section": "A", "subject": "Mathematics", "teacher": "S.B.S", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "A", "subject": "Life Science", "teacher": "D.G", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Science", "teacher": "S.K.J", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:55 - 16:30" },
+      
+        
+        { "class": "Grade 7", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "B", "subject": "I.C", "teacher": "S.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "B", "subject": "Life Science", "teacher": "A.G", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "B", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:55 - 16:30" },
+        
+
+
+        { "class": "Grade 8", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "A", "subject": "Physical Science", "teacher": "B.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "A", "subject": "I.C", "teacher": "H.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "B", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "B", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "B", "subject": "Work Education", "teacher": "S.B.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "A", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "A", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "M.P.D", "timeSlot": "15:20 - 15:55" },
+        
+
+        { "class": "Grade 9", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "B", "subject": "Life Science", "teacher": "S.B", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "B", "subject": "Physical Science", "teacher": "S.B.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "B", "subject": "Bengali", "teacher": "J.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "R.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 9", "section": "B", "subject": "Geography", "teacher": "T.A", "timeSlot": "11:30 - 12:10" },
+        
+
+      
+          { "class": "Grade 10", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "G.D", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "A", "subject": "Physical Science", "teacher": "A.M.S", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "A", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+      
+
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "B", "subject": "Life Science", "teacher": "A.B", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "B", "subject": "English", "teacher": "M.P.D", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "B", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "11:30 - 12:10" },
+          
+          { "class": "Grade 11", "section": "Science", "subject": "Physics", "teacher": "A.M.S", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "S.M", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "English", "teacher": "M.P.D", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 11", "section": "Science", "subject": "Computer", "teacher": "R.K.N", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "J.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "Chemistry", "teacher": "S.K.J", "timeSlot": "12:10 - 13:00" }
+
+        
+    ],
+    "Tuesday": [
+
+      { "class": "Grade 5", "section": "A", "subject": "Bengali", "teacher": "S.S", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "A", "subject": "History", "teacher": "A.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "A", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "A", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "A", "subject": "E.Sc", "teacher": "S.K.J", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:20 - 15:55" },
+
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "A.H", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "B", "subject": "E.Sc", "teacher": "D.G", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "B", "subject": "Comp", "teacher": "A.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "B", "subject": "History", "teacher": "S.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "B", "subject": "Geography", "teacher": "S.D", "timeSlot": "15:20 - 15:55" },
+
+
+      { "class": "Grade 6", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "A.H", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "A", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "G.C.H", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "A", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:55 - 16:30" },
+
+
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "B", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "B", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "B", "subject": "Comp", "teacher": "S.S.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "15:55 - 16:30" },
+
+      
+        { "class": "Grade 7", "section": "A", "subject": "Mathematics", "teacher": "S.B.S", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "A", "subject": "Life Science", "teacher": "D.G", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Science", "teacher": "S.K.J", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:55 - 16:30" },
+      
+        
+        { "class": "Grade 7", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "B", "subject": "I.C", "teacher": "S.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "B", "subject": "Life Science", "teacher": "A.G", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "B", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:55 - 16:30" },
+        
+
+
+        { "class": "Grade 8", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "A", "subject": "Physical Science", "teacher": "B.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "A", "subject": "I.C", "teacher": "H.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "B", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "B", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "B", "subject": "Work Education", "teacher": "S.B.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "A", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "A", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "M.P.D", "timeSlot": "15:20 - 15:55" },
+        
+
+        { "class": "Grade 9", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "B", "subject": "Life Science", "teacher": "S.B", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "B", "subject": "Physical Science", "teacher": "S.B.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "B", "subject": "Bengali", "teacher": "J.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "R.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 9", "section": "B", "subject": "Geography", "teacher": "T.A", "timeSlot": "11:30 - 12:10" },
+        
+
+      
+          { "class": "Grade 10", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "G.D", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "A", "subject": "Physical Science", "teacher": "A.M.S", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "A", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+      
+
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "B", "subject": "Life Science", "teacher": "A.B", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "B", "subject": "English", "teacher": "M.P.D", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "B", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "11:30 - 12:10" },
+          
+          { "class": "Grade 11", "section": "Science", "subject": "Physics", "teacher": "A.M.S", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "S.M", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "English", "teacher": "M.P.D", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 11", "section": "Science", "subject": "Computer", "teacher": "R.K.N", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "J.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "Chemistry", "teacher": "S.K.J", "timeSlot": "12:10 - 13:00" }
+
+        
+    ],
+    "Wednesday": [
+
+      { "class": "Grade 5", "section": "A", "subject": "Bengali", "teacher": "S.S", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "A", "subject": "History", "teacher": "A.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "A", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "A", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "A", "subject": "E.Sc", "teacher": "S.K.J", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:20 - 15:55" },
+
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "A.H", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "B", "subject": "E.Sc", "teacher": "D.G", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "B", "subject": "Comp", "teacher": "A.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "B", "subject": "History", "teacher": "S.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "B", "subject": "Geography", "teacher": "S.D", "timeSlot": "15:20 - 15:55" },
+
+
+      { "class": "Grade 6", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "A.H", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "A", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "G.C.H", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "A", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:55 - 16:30" },
+
+
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "B", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "B", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "B", "subject": "Comp", "teacher": "S.S.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "15:55 - 16:30" },
+
+      
+        { "class": "Grade 7", "section": "A", "subject": "Mathematics", "teacher": "S.B.S", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "A", "subject": "Life Science", "teacher": "D.G", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Science", "teacher": "S.K.J", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:55 - 16:30" },
+      
+        
+        { "class": "Grade 7", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "B", "subject": "I.C", "teacher": "S.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "B", "subject": "Life Science", "teacher": "A.G", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "B", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:55 - 16:30" },
+        
+
+
+        { "class": "Grade 8", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "A", "subject": "Physical Science", "teacher": "B.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "A", "subject": "I.C", "teacher": "H.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "B", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "B", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "B", "subject": "Work Education", "teacher": "S.B.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "A", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "A", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "M.P.D", "timeSlot": "15:20 - 15:55" },
+        
+
+        { "class": "Grade 9", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "B", "subject": "Life Science", "teacher": "S.B", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "B", "subject": "Physical Science", "teacher": "S.B.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "B", "subject": "Bengali", "teacher": "J.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "R.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 9", "section": "B", "subject": "Geography", "teacher": "T.A", "timeSlot": "11:30 - 12:10" },
+        
+
+      
+          { "class": "Grade 10", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "G.D", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "A", "subject": "Physical Science", "teacher": "A.M.S", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "A", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+      
+
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "B", "subject": "Life Science", "teacher": "A.B", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "B", "subject": "English", "teacher": "M.P.D", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "B", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "11:30 - 12:10" },
+          
+          { "class": "Grade 11", "section": "Science", "subject": "Physics", "teacher": "A.M.S", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "S.M", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "English", "teacher": "M.P.D", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 11", "section": "Science", "subject": "Computer", "teacher": "R.K.N", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "J.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "Chemistry", "teacher": "S.K.J", "timeSlot": "12:10 - 13:00" }
+
+        
+    ],
+    "Thursday": [
+
+      { "class": "Grade 5", "section": "A", "subject": "Bengali", "teacher": "S.S", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "A", "subject": "History", "teacher": "A.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "A", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "A", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "A", "subject": "E.Sc", "teacher": "S.K.J", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:20 - 15:55" },
+
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "A.H", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "B", "subject": "E.Sc", "teacher": "D.G", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "B", "subject": "Comp", "teacher": "A.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "B", "subject": "History", "teacher": "S.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "B", "subject": "Geography", "teacher": "S.D", "timeSlot": "15:20 - 15:55" },
+
+
+      { "class": "Grade 6", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "A.H", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "A", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "G.C.H", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "A", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:55 - 16:30" },
+
+
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "B", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "B", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "B", "subject": "Comp", "teacher": "S.S.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "15:55 - 16:30" },
+
+      
+        { "class": "Grade 7", "section": "A", "subject": "Mathematics", "teacher": "S.B.S", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "A", "subject": "Life Science", "teacher": "D.G", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Science", "teacher": "S.K.J", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:55 - 16:30" },
+      
+        
+        { "class": "Grade 7", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "B", "subject": "I.C", "teacher": "S.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "B", "subject": "Life Science", "teacher": "A.G", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "B", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:55 - 16:30" },
+        
+
+
+        { "class": "Grade 8", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "A", "subject": "Physical Science", "teacher": "B.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "A", "subject": "I.C", "teacher": "H.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "B", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "B", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "B", "subject": "Work Education", "teacher": "S.B.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "A", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "A", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "M.P.D", "timeSlot": "15:20 - 15:55" },
+        
+
+        { "class": "Grade 9", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "B", "subject": "Life Science", "teacher": "S.B", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "B", "subject": "Physical Science", "teacher": "S.B.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "B", "subject": "Bengali", "teacher": "J.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "R.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 9", "section": "B", "subject": "Geography", "teacher": "T.A", "timeSlot": "11:30 - 12:10" },
+        
+
+      
+          { "class": "Grade 10", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "G.D", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "A", "subject": "Physical Science", "teacher": "A.M.S", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "A", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+      
+
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "B", "subject": "Life Science", "teacher": "A.B", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "B", "subject": "English", "teacher": "M.P.D", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "B", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "11:30 - 12:10" },
+          
+          { "class": "Grade 11", "section": "Science", "subject": "Physics", "teacher": "A.M.S", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "S.M", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "English", "teacher": "M.P.D", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 11", "section": "Science", "subject": "Computer", "teacher": "R.K.N", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "J.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "Chemistry", "teacher": "S.K.J", "timeSlot": "12:10 - 13:00" }
+
+        
+    ],
+    "Friday": [
+
+      { "class": "Grade 5", "section": "A", "subject": "Bengali", "teacher": "S.S", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "A", "subject": "History", "teacher": "A.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "A", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "A", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "A", "subject": "E.Sc", "teacher": "S.K.J", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:20 - 15:55" },
+
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "A.H", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "B", "subject": "E.Sc", "teacher": "D.G", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "B", "subject": "Comp", "teacher": "A.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "B", "subject": "History", "teacher": "S.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "B", "subject": "Geography", "teacher": "S.D", "timeSlot": "15:20 - 15:55" },
+
+
+      { "class": "Grade 6", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "A.H", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "A", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "G.C.H", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "A", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:55 - 16:30" },
+
+
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "B", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "B", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "B", "subject": "Comp", "teacher": "S.S.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "15:55 - 16:30" },
+
+      
+        { "class": "Grade 7", "section": "A", "subject": "Mathematics", "teacher": "S.B.S", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "A", "subject": "Life Science", "teacher": "D.G", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Science", "teacher": "S.K.J", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:55 - 16:30" },
+      
+        
+        { "class": "Grade 7", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "B", "subject": "I.C", "teacher": "S.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "B", "subject": "Life Science", "teacher": "A.G", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "B", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:55 - 16:30" },
+        
+
+
+        { "class": "Grade 8", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "A", "subject": "Physical Science", "teacher": "B.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "A", "subject": "I.C", "teacher": "H.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "B", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "B", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "B", "subject": "Work Education", "teacher": "S.B.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "A", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "A", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "M.P.D", "timeSlot": "15:20 - 15:55" },
+        
+
+        { "class": "Grade 9", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "B", "subject": "Life Science", "teacher": "S.B", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "B", "subject": "Physical Science", "teacher": "S.B.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "B", "subject": "Bengali", "teacher": "J.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "R.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 9", "section": "B", "subject": "Geography", "teacher": "T.A", "timeSlot": "11:30 - 12:10" },
+        
+
+      
+          { "class": "Grade 10", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "G.D", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "A", "subject": "Physical Science", "teacher": "A.M.S", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "A", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+      
+
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "B", "subject": "Life Science", "teacher": "A.B", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "B", "subject": "English", "teacher": "M.P.D", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "B", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "11:30 - 12:10" },
+          
+          { "class": "Grade 11", "section": "Science", "subject": "Physics", "teacher": "A.M.S", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "S.M", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "English", "teacher": "M.P.D", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 11", "section": "Science", "subject": "Computer", "teacher": "R.K.N", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "J.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "Chemistry", "teacher": "S.K.J", "timeSlot": "12:10 - 13:00" }
+
+        
+    ],
+    "Saturday": [
+
+      { "class": "Grade 5", "section": "A", "subject": "Bengali", "teacher": "S.S", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "A", "subject": "History", "teacher": "A.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "A", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "A", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "A", "subject": "E.Sc", "teacher": "S.K.J", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:20 - 15:55" },
+
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "A.H", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 5", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 5", "section": "B", "subject": "E.Sc", "teacher": "D.G", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 5", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 5", "section": "B", "subject": "Comp", "teacher": "A.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 5", "section": "B", "subject": "History", "teacher": "S.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 5", "section": "B", "subject": "Geography", "teacher": "S.D", "timeSlot": "15:20 - 15:55" },
+
+
+      { "class": "Grade 6", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "A.H", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "A", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "A", "subject": "Bengali", "teacher": "G.C.H", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "A", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "A", "subject": "I.C", "teacher": "S.M.J", "timeSlot": "15:55 - 16:30" },
+
+
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "S.B.M", "timeSlot": "10:50 - 11:30" },
+      { "class": "Grade 6", "section": "B", "subject": "E.Sc", "teacher": "B.M", "timeSlot": "11:30 - 12:10" },
+      { "class": "Grade 6", "section": "B", "subject": "English", "teacher": "S.P", "timeSlot": "12:10 - 13:00" },
+      { "class": "Grade 6", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "13:20 - 13:40" },
+      { "class": "Grade 6", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "14:10 - 14:45" },
+      { "class": "Grade 6", "section": "B", "subject": "Geography", "teacher": "A.S", "timeSlot": "14:45 - 15:20" },
+      { "class": "Grade 6", "section": "B", "subject": "Comp", "teacher": "S.S.M", "timeSlot": "15:20 - 15:55" },
+      { "class": "Grade 6", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "15:55 - 16:30" },
+
+      
+        { "class": "Grade 7", "section": "A", "subject": "Mathematics", "teacher": "S.B.S", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "A", "subject": "Life Science", "teacher": "D.G", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "A", "subject": "English", "teacher": "R.S.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Science", "teacher": "S.K.J", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "A", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:55 - 16:30" },
+      
+        
+        { "class": "Grade 7", "section": "B", "subject": "Mathematics", "teacher": "G.K.D", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 7", "section": "B", "subject": "Bengali", "teacher": "S.S", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 7", "section": "B", "subject": "I.C", "teacher": "S.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 7", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 7", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 7", "section": "B", "subject": "Life Science", "teacher": "A.G", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 7", "section": "B", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:55 - 16:30" },
+        
+
+
+        { "class": "Grade 8", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "A", "subject": "History", "teacher": "L.D", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "A", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "A", "subject": "Physical Science", "teacher": "B.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "A", "subject": "Bengali", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "A", "subject": "I.C", "teacher": "H.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 8", "section": "B", "subject": "Sanskrit", "teacher": "G.C.H", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 8", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 8", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 8", "section": "B", "subject": "Mathematics", "teacher": "A.K.G", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 8", "section": "B", "subject": "History", "teacher": "R.J", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 8", "section": "B", "subject": "Physical Education", "teacher": "A.H", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 8", "section": "B", "subject": "Work Education", "teacher": "S.B.M", "timeSlot": "15:55 - 16:30" },
+        
+
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "A", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "A", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "A", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "A", "subject": "Geography", "teacher": "S.D", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "A", "subject": "English", "teacher": "M.P.D", "timeSlot": "15:20 - 15:55" },
+        
+
+        { "class": "Grade 9", "section": "B", "subject": "English", "teacher": "G.D", "timeSlot": "12:10 - 13:00" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "11:30 - 12:10" },
+        { "class": "Grade 9", "section": "B", "subject": "Life Science", "teacher": "S.B", "timeSlot": "10:50 - 11:30" },
+        { "class": "Grade 9", "section": "B", "subject": "Physical Science", "teacher": "S.B.M", "timeSlot": "13:20 - 13:40" },
+        { "class": "Grade 9", "section": "B", "subject": "Bengali", "teacher": "J.B", "timeSlot": "14:10 - 14:45" },
+        { "class": "Grade 9", "section": "B", "subject": "Mathematics", "teacher": "R.M", "timeSlot": "14:45 - 15:20" },
+        { "class": "Grade 9", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "15:20 - 15:55" },
+        { "class": "Grade 9", "section": "B", "subject": "Geography", "teacher": "T.A", "timeSlot": "11:30 - 12:10" },
+        
+
+      
+          { "class": "Grade 10", "section": "A", "subject": "Bengali", "teacher": "J.B", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "G.D", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "A", "subject": "Geography", "teacher": "T.A", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "A", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "A", "subject": "Physical Science", "teacher": "A.M.S", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "A", "subject": "Life Science", "teacher": "A.B", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "A", "subject": "English", "teacher": "R.N.J", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "A", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+      
+
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "N.C.P", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 10", "section": "B", "subject": "History", "teacher": "G.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 10", "section": "B", "subject": "Life Science", "teacher": "A.B", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 10", "section": "B", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 10", "section": "B", "subject": "English", "teacher": "M.P.D", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 10", "section": "B", "subject": "Physical Science", "teacher": "S.B.S", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 10", "section": "B", "subject": "Bengali", "teacher": "T.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 10", "section": "B", "subject": "Geography", "teacher": "A.G", "timeSlot": "11:30 - 12:10" },
+          
+          { "class": "Grade 11", "section": "Science", "subject": "Physics", "teacher": "A.M.S", "timeSlot": "10:50 - 11:30" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "S.M", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "English", "teacher": "M.P.D", "timeSlot": "12:10 - 13:00" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "B.R", "timeSlot": "13:20 - 13:40" },
+          { "class": "Grade 11", "section": "Science", "subject": "Computer", "teacher": "R.K.N", "timeSlot": "14:10 - 14:45" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "14:45 - 15:20" },
+          { "class": "Grade 11", "section": "Science", "subject": "Mathematics", "teacher": "A.M", "timeSlot": "15:20 - 15:55" },
+          { "class": "Grade 11", "section": "Science", "subject": "Bengali", "teacher": "J.B", "timeSlot": "11:30 - 12:10" },
+          { "class": "Grade 11", "section": "Science", "subject": "Chemistry", "teacher": "S.K.J", "timeSlot": "12:10 - 13:00" }
+
+        
+    ]
+  
+  }
+}

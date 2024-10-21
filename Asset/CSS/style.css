@@ -1,0 +1,291 @@
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 20px;
+    /* background-image: url('https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/56/71/watsonx-timeline-build.gif'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #eeeeef;
+    color: #333;
+    line-height: 1.6;
+  
+  }
+
+  select,
+  input,
+  button {
+    margin: 6px 0;
+    padding: 6px;
+    font-size: 14px;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-family: "Roboto", sans-serif;
+  }
+
+  select:focus,
+  input:focus {
+    background-color: #eaeaea;
+    outline: none;
+  }
+
+  button {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 9px 14px;
+    border: none;
+    border-radius: 50px;
+  }
+
+  button:hover {
+    /* background-color: #e9e92e9; */
+    /* background-color: black; */
+    /* border: 2px solid rgb(255, 255, 255); */
+
+  }
+
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    font-family: "Roboto", sans-serif;
+  }
+
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+    font-size: 14px;
+
+  }
+
+  th {
+    background-color: #f2f2f2;
+    color: #000000;
+    font-weight: 500;
+  }
+
+  td {
+    background-color: #fff;
+  }
+
+  td:hover {
+    background-color: #eeeeee;
+  }
+
+  h1,
+  h2 {
+    color: #0a0a0a;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  /* Grid layout for teacher list */
+  #teacherList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  #teacherList div {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 5px;
+    background-color: white;
+    /* border: 1px solid #ddd; */
+    border-radius: 4px;
+    /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05); */
+    transition: box-shadow 0.3s ease;
+  }
+
+
+  #teacherList div:hover {
+    box-shadow: 0 1px 8px rgba(190, 219, 242, 0.5);
+  }
+
+  /* Enhanced checkbox container */
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    /* Increased padding for better spacing */
+    background-color: #a01515;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    /* Softer rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    /* Slightly more pronounced shadow */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .checkbox-container:hover {
+    background-color: #f0f0f0;
+    /* Lightened background on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    /* Stronger shadow on hover */
+    transform: scale(1.02);
+    /* Slight hover zoom effect */
+  }
+
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 12px;
+    /* Increased space between checkbox and label */
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  .checkbox-container label {
+    margin-left: 8px;
+    /* Increased space between checkbox and label */
+    font-size: 15px;
+    cursor: pointer;
+    padding: 2px 6px;
+    transition: color 0.2s ease, padding 0.3s ease;
+  }
+
+
+  .checkbox-container label:hover {
+    color: #007bff;
+    /* Color change on hover */
+    padding-left: 8px;
+    /* Slight padding effect on hover */
+  }
+
+  /* Optional: Checkbox checked style */
+  .checkbox-container input[type="checkbox"]:checked+label {
+    font-weight: bold;
+    /* Bolder font for selected checkboxes */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    #teacherList {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+  }
+
+  @media (max-width: 992px) {
+    #teacherList {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    #teacherList {
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    }
+  }
+
+  @media (max-width: 576px) {
+    #teacherList {
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    }
+  }
+
+  @media (max-width: 400px) {
+    #teacherList {
+      grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+  }
+
+
+  /* Loader styles */
+
+  .loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    /* Slightly transparent background */
+    color: #000000;
+    display: none;
+    /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+  }
+
+  .loader {
+    /* width: 0%;
+height: 80px; */
+    /* background: url('spinner.png') no-repeat center center; */
+    /* background-size: contain; */
+    animation: spin 10s linear;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loader-text {
+    margin-top: 20px;
+    font-size: 25px;
+  }
+
+
+
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .report-error-btn {
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .help-btn {
+      font-size: 14px;
+    }
+
+    .icon-text {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navbar-container {
+      padding: 0 10px;
+    }
+
+    .report-error-btn {
+      font-size: 10px;
+      padding: 8px 12px;
+    }
+
+    .help-btn {
+      font-size: 12px;
+    }
+
+    .icon-text {
+      font-size: 18px;
+    }
+  }
+
+  #navoptions:hover {
+    text-decoration: underline;
+  }
