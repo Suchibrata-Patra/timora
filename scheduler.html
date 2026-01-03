@@ -15,14 +15,16 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const today = new Date();
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
       const formattedDate = today.toLocaleDateString(undefined, options); // Format the current date
 
       // Use innerHTML to insert HTML content
       document.getElementById('currentDate').innerHTML = `<p style="border:none;border-radius:5px;padding:4px 5px;display:inline;">${formattedDate}</p>`;
     });
-
-
   </script>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -58,6 +60,37 @@
       /* Text color */
       /* Add additional styling as needed */
     }
+
+    /* --- PRINT SPECIFIC STYLES START HERE --- */
+    @media print {
+      /* Hide everything in the body by default */
+      body * {
+        visibility: hidden;
+      }
+
+      /* Make the specific section and its children visible */
+      #provisionalRoutineSection,
+      #provisionalRoutineSection * {
+        visibility: visible;
+      }
+
+      /* Position the section at the absolute top left so it fills the page */
+      #provisionalRoutineSection {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: block !important; /* Ensure it is displayed */
+      }
+
+      /* Optional: Hide the 'Print' button itself on the paper */
+      .print-button {
+        display: none !important;
+      }
+    }
+    /* --- PRINT SPECIFIC STYLES END HERE --- */
   </style>
 
 
@@ -67,18 +100,13 @@
 
 <body>
 
-  <!-- Navbar -->
   <div
     style="display: flex; align-items: center; justify-content: space-between; width: 100vw; height: 60px;color: #000000; padding: 0 30px; box-sizing: border-box;">
-    <!-- Container for Haggle and Help Button -->
     <div style="display: flex; align-items: center; gap: 10px;">
-      <!-- Icon Text -->
-      <!-- Logo Text -->
       <div class="logo">
         <img src="timora.png" alt="Timora logo" class="logo-img">
         <span class="logo-text">Timora.</span>
       </div>
-      <!-- Help Button -->
       <button style=" background-color: transparent; border: none; color: #000000; font-size: 14px; cursor: pointer;
         display: inline-flex; align-items: center; padding: 4px 8px;" id="navoptions"
         onclick="window.location.href='Help.html';">
@@ -86,7 +114,6 @@
       </button>
 
 
-      <!-- Edit Schedule -->
       <button
         style="background-color: transparent; border: none; color: #000000; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; padding: 4px;"
         id="navoptions" onclick="window.location.href='edit.html';">
@@ -94,7 +121,6 @@
       </button>
     </div>
 
-    <!-- Report Error Button -->
     <button
       style="background-color: #000000; color: #ffffff; border: none; border-radius: 20px; padding: 10px 15px; font-size: 12px; cursor: pointer; font-weight: 500; margin-right: 10%; display: flex; align-items: center;"
       onclick="window.location.href='error_report.html';">
@@ -105,16 +131,13 @@
     </button>
   </div>
 
-  <!-- Main Content -->
   <div
     style="display: flex; align-items: center; justify-content: flex-start; width: 100vw; height: 20%; margin: 0; box-sizing: border-box; padding: 20px;">
     <div
       style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; width: 100%; max-width: 600px;">
-      <!-- Date Display -->
       <span id="currentDate" style="font-size: 24px; font-weight: 600; color: #352626; margin-bottom: 20px;">Date
         Here</span>
 
-      <!-- Day Picker -->
       <label for="daySelect"
         style="font-weight: 400; font-size: 15px; color: #000000; margin-bottom: 2px; display: flex; align-items: center;">
         Choose the Day
@@ -158,13 +181,6 @@
       </button>
     </div>
 
-
-
-  
-
-
-
-
     <div style="color: orange;font-size: 14px;padding-left: 3px;">*Numbers in Orange Denotes the Number of Classes the
       teacher have already in the Schedule.</div>
     <div id="teacherList">
@@ -176,8 +192,7 @@
         <input type="checkbox" id="teacher2">
         <label for="teacher2">Teacher 2</label>
       </div>
-      <!-- Add more checkboxes and labels as needed -->
-    </div>
+      </div>
 
     <button onclick="generateProvisionalRoutine()" style="display: flex; align-items: center; cursor: pointer;">
       Generate
@@ -209,12 +224,10 @@
           <th>Original Teacher</th>
           <th>Replacement Teacher</th>
           <th>Time Slot</th>
-          <!-- <th>Signature</th> Added Signature column -->
-        </tr>
+          </tr>
       </thead>
       <tbody id="provisionalTable">
-        <!-- Provisional routine will be dynamically added here -->
-      </tbody>
+        </tbody>
     </table>
   </div>
 
@@ -223,58 +236,51 @@
       document.getElementById('provisionalRoutineSection').style.display = 'block';
     }
 
+    // UPDATED FUNCTION: Simpler approach, relies on CSS Media Queries
     function printSection() {
-      var printSection = document.getElementById('provisionalRoutineSection');
-      var originalDisplay = printSection.style.display;
-      printSection.style.display = 'block';
-
       window.print();
-
-      printSection.style.display = originalDisplay; // Hide it again after printing
     }
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const overlay = document.getElementById("preferencesOverlay");
-      overlay.style.display = "none"; // Hide the overlay initially
-
-      // Load saved preferences from localStorage if they exist
-      loadPreferences();
+      // Add a check to prevent error if element doesn't exist
+      if (overlay) {
+        overlay.style.display = "none";
+        loadPreferences();
+      }
     });
 
     function togglePreferences() {
       const overlay = document.getElementById("preferencesOverlay");
       const preferencesSection = document.getElementById("preferencesSection");
 
+      // Safety check in case elements are missing from this snippet
+      if (!overlay || !preferencesSection) return;
+
       if (overlay.style.display === "flex") {
         preferencesSection.classList.remove("show");
         setTimeout(() => {
           overlay.style.display = "none";
-        }, 300); // Match the duration of the transition
+        }, 300);
       } else {
         overlay.style.display = "flex";
         setTimeout(() => {
           preferencesSection.classList.add("show");
-        }, 10); // Delay to allow display to apply
+        }, 10);
       }
     }
 
     function savePreferences() {
-      // Simply hide the overlay
       togglePreferences();
     }
-
-
   </script>
 
 
 
   <div id="schedule-container" style="padding: 2%;">
-    <!-- <h3>Weekly Schedule</h3> -->
+    </div>
 
-  </div>
-
-  <!-- Loader HTML -->
   <div id="loader-overlay" class="loader-overlay">
     <div class="loader"></div>
     <br>
@@ -289,7 +295,9 @@
     <link rel="stylesheet" href="Asset/CSS/animation.css">
   </div>
   <script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    window.si = window.si || function () {
+      (window.siq = window.siq || []).push(arguments);
+    };
   </script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>

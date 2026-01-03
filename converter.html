@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Routine Manager (Tab-Specific Errors)</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 30px; background-color: #f4f7f6; max-width: 1100px; margin: auto; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        h2 { color: #333; margin-top: 0; border-bottom: 3px solid #007bff; padding-bottom: 10px; }
+        
+        /* Upload Section */
+        .upload-section { background: #e9ecef; padding: 20px; border-radius: 8px; margin-bottom: 25px; border: 2px dashed #ced4da; text-align: center; }
+        .upload-section:hover { border-color: #007bff; background: #e3f2fd; }
+        .btn-select { background: #007bff; color: white; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; }
+        input[type="file"] { display: none; }
+
+        /* TABS Styling */
+        .tab-nav { display: flex; gap: 5px; margin-bottom: 0; border-bottom: 2px solid #ddd; overflow-x: auto; }
+        .tab-btn {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            font-weight: bold;
+            color: #555;
+            white-space: nowrap;
+        }
+        .tab-btn:hover { background: #e2e6ea; }
+        .tab-btn.active {
+            background: #fff;
+            border-color: #ddd;
+            border-bottom: 2px solid #fff; 
+            color: #007bff;
+            margin-bottom: -2px; 
+        }
+        .tab-btn.has-conflict { color: #dc3545; } 
+
+        /* Table Area */
+        .table-container { border: 1px solid #ddd; border-top: none; background: white; padding: 20px; border-radius: 0 0 8px 8px; min-height: 300px; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+        th { background-color: #f1f3f5; color: #495057; border-bottom: 2px solid #dee2e6; padding: 12px; text-align: left; }
+        td { border-bottom: 1px solid #eee; padding: 10px; }
+        tr:hover { background-color: #f8f9fa; }
+
+        /* Conflict Alert Box - DYNAMIC */
+        .conflict-box { display: none; background-color: #fff5f5; border: 1px solid #ffc9c9; border-radius: 8px; padding: 20px; margin-bottom: 20px; border-left: 5px solid #dc3545; }
+        .conflict-header { color: #dc3545; font-weight: bold; font-size: 1.1em; display: flex; align-items: center; gap: 10px; }
+        .conflict-list { margin-top: 10px; padding-left: 20px; }
+        .conflict-list li { margin-bottom: 5px; color: #a00; font-family: monospace; font-size: 0.95em; }
+
+        .btn-download { display: block; width: 100%; padding: 15px; background: #28a745; color: white; text-align: center; font-weight: bold; text-decoration: none; border-radius: 8px; margin-top: 20px; display: none; }
+        .btn-download:hover { background: #218838; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>📅 Tabbed Routine Maker</h2>
+    
+    <div class="upload-section">
+        <label for="csvFileInput" class="btn-select">📂 Upload CSV</label>
+        <div id="fileName" style="margin-top: 10px; color: #666; font-size: 0.9em;">No file selected</div>
+        <input type="file" id="csvFileInput" accept=".csv" onchange="processFile()">
+    </div>
+
+    <div id="tabContainer" class="tab-nav"></div>
+
+    <div id="conflictArea" class="conflict-box">
+        <div class="conflict-header">⚠️ Conflicts on <span id="conflictDayName"></span></div>
+        <ul id="conflictList" class="conflict-list"></ul>
+    </div>
+
+    <div class="table-container">
+        <table id="previewTable">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Section</th>
+                    <th>Subject</th>
+                    <th>Teacher</th>
+                    <th>Time Slot</th>
+                </tr>
+            </thead>
+            <tbody id="previewBody">
+                <tr><td colspan="5" style="text-align:center; color:#999; padding: 30px;">Upload a file to see the schedule...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a id="downloadLink" class="btn-download">⬇ Download Full Schedule</a>
+</div>
+
+<script>
+    // ================= CONFIGURATION =================
+    const TIME_SLOTS = {
+        "1": "10:50 - 11:30", "2": "11:30 - 12:10", "3": "12:10 - 13:00",
+        "4": "13:20 - 13:40", "5": "14:10 - 14:45", "6": "14:45 - 15:20",
+        "7": "15:20 - 15:55", "8": "15:55 - 16:30"
+    };
+
+    const TEACHER_SUBJECTS = {
+        "B.D.": "Bengali", "S.D": "English", "S.K.M": "History", "S.B": "Mathematics",
+        "G.B": "Geography", "B.M": "E.Sc", "P.P": "I.C", "R.J.M": "English",
+        "G.M": "Mathematics", "Ganesh": "English", "S.M": "Mathematics", "H.M.": "Headmaster"
+    };
+
+    const SUFFIX_MAP = {
+        "M": "Mathematics", "Ped": "Physical Education", "Pr": "Practical",
+        "GK": "General Knowledge", "H": "History", "G": "Geography"
+    };
+    
+    let allRecords = [];
+    let allConflicts = [];
+    let activeDay = "";
+
+    // =================================================
+
+    function processFile() {
+        const fileInput = document.getElementById('csvFileInput');
+        if (fileInput.files.length === 0) return;
+        
+        document.getElementById('fileName').innerText = fileInput.files[0].name;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const rawText = e.target.result.replace(/^\uFEFF/, '');
+            allRecords = parseSmartCSV(rawText);
+            
+            // Global Conflict Check
+            allConflicts = detectConflicts(allRecords);
+
+            // Initialize Tabs
+            initTabs(allRecords, allConflicts);
+            
+            // Setup Download
+            setupDownload(allRecords);
+        };
+        reader.readAsText(fileInput.files[0]);
+    }
+
+    function initTabs(records, conflicts) {
+        const tabContainer = document.getElementById('tabContainer');
+        tabContainer.innerHTML = ""; 
+
+        // Get Unique Days
+        const days = [...new Set(records.map(r => r.day))];
+
+        if (days.length === 0) {
+            document.getElementById('previewBody').innerHTML = "<tr><td colspan='5' style='text-align:center'>No valid days found. Check CSV format.</td></tr>";
+            return;
+        }
+
+        days.forEach((day, index) => {
+            const btn = document.createElement('div');
+            btn.className = 'tab-btn';
+            btn.innerText = day;
+            
+            // Mark tab red if it has ANY conflicts
+            const dayHasConflict = conflicts.some(c => c.day === day);
+            if (dayHasConflict) {
+                btn.classList.add('has-conflict');
+                btn.innerHTML += " ⚠️";
+            }
+
+            btn.onclick = () => switchTab(day);
+            tabContainer.appendChild(btn);
+
+            if (index === 0) activeDay = day;
+        });
+
+        switchTab(activeDay);
+    }
+
+    function switchTab(day) {
+        activeDay = day;
+        
+        // 1. Activate Tab UI
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            if (btn.innerText.replace(" ⚠️","") === day) btn.classList.add('active');
+            else btn.classList.remove('active');
+        });
+
+        // 2. Filter & Show Conflicts for THIS DAY only
+        const dayConflicts = allConflicts.filter(c => c.day === day);
+        showConflictBox(day, dayConflicts);
+
+        // 3. Render Table
+        const dayRecords = allRecords.filter(r => r.day === day);
+        renderTable(dayRecords);
+    }
+
+    function showConflictBox(day, conflicts) {
+        const box = document.getElementById('conflictArea');
+        const list = document.getElementById('conflictList');
+        const dayNameSpan = document.getElementById('conflictDayName');
+
+        if (conflicts.length > 0) {
+            box.style.display = 'block';
+            dayNameSpan.innerText = day;
+            list.innerHTML = "";
+            
+            conflicts.forEach(c => {
+                let li = document.createElement('li');
+                // Format: "Period 1: Grade 5 A is assigned to Teacher A AND Teacher B"
+                li.innerHTML = `<b>${c.time}:</b> Class <b>${c.cls}</b> assigned to <u style="color:black">${c.teachers.join(' & ')}</u>`;
+                list.appendChild(li);
+            });
+        } else {
+            box.style.display = 'none';
+        }
+    }
+
+    function renderTable(records) {
+        const tbody = document.getElementById('previewBody');
+        tbody.innerHTML = "";
+        if (records.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;">No classes found for this day.</td></tr>`;
+            return;
+        }
+        records.forEach(rec => {
+            let row = `<tr>
+                <td><b>${rec.class}</b></td>
+                <td>${rec.section}</td>
+                <td>${rec.subject}</td>
+                <td>${rec.teacher}</td>
+                <td>${rec.timeSlot}</td>
+            </tr>`;
+            tbody.innerHTML += row;
+        });
+    }
+
+    // --- PARSING LOGIC (UNCHANGED from Fixed Version) ---
+    function parseSmartCSV(text) {
+        const lines = text.split(/\r\n|\n/).filter(line => line.trim() !== "");
+        
+        let headerIndex = -1;
+        for(let i=0; i<lines.length; i++) {
+            if (lines[i].toLowerCase().includes("monday")) { headerIndex = i; break; }
+        }
+        if (headerIndex === -1) { alert("Could not find 'Monday' header row."); return []; }
+
+        const dayRow = splitCSVLine(lines[headerIndex]);
+        const periodRow = splitCSVLine(lines[headerIndex + 1]);
+        
+        let colMap = [];
+        let currentDay = "";
+
+        for (let i = 0; i < dayRow.length; i++) {
+            if (dayRow[i] && dayRow[i].trim()) currentDay = dayRow[i].trim();
+            let period = periodRow[i] ? periodRow[i].trim() : "";
+            
+            if (currentDay && period && period.toLowerCase() !== "teacher") {
+                colMap[i] = { day: currentDay, period: period };
+            }
+        }
+
+        let output = [];
+        for (let r = headerIndex + 2; r < lines.length; r++) {
+            let cols = splitCSVLine(lines[r]);
+            let teacher = cols[0].trim();
+            if (!teacher || teacher.toLowerCase() === "teacher") continue;
+
+            for (let c = 1; c < cols.length; c++) {
+                if (cols[c] && cols[c].trim() && colMap[c]) {
+                    let { grade, section, suffix } = parseCellData(cols[c]);
+                    
+                    let subject = "General";
+                    if (suffix && SUFFIX_MAP[suffix]) subject = SUFFIX_MAP[suffix];
+                    else if (TEACHER_SUBJECTS[teacher]) subject = TEACHER_SUBJECTS[teacher];
+
+                    output.push({
+                        day: colMap[c].day,
+                        class: `Grade ${grade}`,
+                        section: section,
+                        subject: subject,
+                        teacher: teacher,
+                        timeSlot: TIME_SLOTS[colMap[c].period] || colMap[c].period,
+                        gradeSort: parseInt(grade) || 99
+                    });
+                }
+            }
+        }
+        output.sort((a,b) => a.gradeSort - b.gradeSort || a.section.localeCompare(b.section));
+        return output;
+    }
+
+    function splitCSVLine(line) {
+        let parts = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+        return parts.map(p => p.trim().replace(/^"|"$/g, ''));
+    }
+
+    function parseCellData(raw) {
+        raw = raw.replace(/"/g, '').trim();
+        let parts = raw.split(" ");
+        let main = parts[0]; 
+        let suffix = parts.length > 1 ? parts[1] : null; 
+        let match = main.match(/^(\d+)([A-Za-z]*)$/);
+        return match ? { grade: match[1], section: match[2], suffix } : { grade: main, section: "", suffix };
+    }
+
+    function detectConflicts(records) {
+        let map = {};
+        let conflicts = [];
+        records.forEach(rec => {
+            let key = `${rec.day}|${rec.timeSlot}|${rec.class}|${rec.section}`;
+            if (!map[key]) map[key] = [];
+            map[key].push(rec.teacher);
+        });
+        for (let key in map) {
+            let teachers = [...new Set(map[key])];
+            if (teachers.length > 1) {
+                let [day, time, cls, sec] = key.split('|');
+                conflicts.push({ day, time, cls: cls + " " + sec, teachers });
+            }
+        }
+        return conflicts;
+    }
+
+    function setupDownload(records) {
+        let csv = "day,class,section,subject,teacher,timeSlot\n";
+        records.forEach(r => csv += `${r.day},${r.class},${r.section},${r.subject},${r.teacher},${r.timeSlot}\n`);
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = window.URL.createObjectURL(blob);
+        const btn = document.getElementById('downloadLink');
+        btn.href = url;
+        btn.download = "Final_Schedule_Fixed.csv";
+        btn.style.display = "block";
+    }
+</script>
+
+</body>
+</html>
