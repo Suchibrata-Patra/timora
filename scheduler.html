@@ -1,305 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Povisional.</title>
-
 <head>
+  <title>Provisional</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="favicon.png">
-  <link rel="stylesheet" href="Asset/CSS/style.css">
-  <link rel="stylesheet" href="Asset/CSS/popup.css">
-  <script src="Asset/JS/fetcher.js"></script>
-  <script src="Asset/JS/scheduler.js"></script>
-  <script src="Asset/JS/date_detector.js"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const today = new Date();
-      const options = {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      };
-      const formattedDate = today.toLocaleDateString(undefined, options); // Format the current date
-
-      // Use innerHTML to insert HTML content
-      document.getElementById('currentDate').innerHTML = `<p style="border:none;border-radius:5px;padding:4px 5px;display:inline;">${formattedDate}</p>`;
-    });
-  </script>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-  </style>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
   <style>
-    @keyframes rotate {
-      from {
-        transform: rotate(360deg);
-      }
-
-      to {
-        transform: rotate(0deg);
-      }
+    /* --- DESIGN SYSTEM --- */
+    :root {
+      --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --bg-body: #F5F5F7;
+      --bg-card: #FFFFFF;
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent-blue: #FF7722;
+      --danger: #FF3B30;
+      --shadow-card: 0 4px 12px rgba(0,0,0,0.05);
+      --radius-l: 16px;
     }
 
+    * { box-sizing: border-box; }
 
-    .logo-img {
-      height: 45px;
-      /* Adjust the height as needed */
-      margin-right: 10px;
-      /* Space between the image and text */
+    body {
+      margin: 0; padding: 0;
+      font-family: var(--font-stack);
+      background-color: var(--bg-body);
+      color: var(--text-primary);
+      padding-bottom: 60px;
     }
 
-    .logo-text {
-      font-size: 24px;
-      /* Adjust the font size as needed */
-      font-weight: bold;
-      /* Make text bold for emphasis */
-      color: #333;
-      /* Text color */
-      /* Add additional styling as needed */
+    /* --- LAYOUT --- */
+    .container-fluid { width: 95%; max-width: 1600px; margin: 0 auto; }
+
+    /* --- HEADER --- */
+    .app-header {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; height: 60px; padding: 0 20px;
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky; top: 0; z-index: 2000; /* Stays on top */
+    }
+    .logo-text { font-weight: 700; font-size: 19px; }
+    
+    .btn-ghost {
+      background: transparent; border: 1px solid #eee; cursor: pointer;
+      font-size: 13px; font-weight: 500; color: #333;
+      padding: 6px 12px; border-radius: 50px;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .btn-ghost:hover { background: #f5f5f5; }
+
+    /* --- CONTROLS --- */
+    .control-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0;
+    }
+    
+    /* === FIX FOR DOUBLE ARROWS === */
+    .select-wrapper { position: relative; width: 220px; }
+    
+    select#daySelect {
+      width: 100%; padding: 10px 14px; font-size: 15px; font-weight: 600;
+      border: 1px solid #ddd; border-radius: 10px;
+      background-color: #fff; 
+      color: #333; cursor: pointer;
+      
+      /* KEY FIX: Force hide native browser arrow */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: none;
+    }
+    
+    /* Hide arrow in IE/Edge */
+    select#daySelect::-ms-expand { display: none; }
+    
+    .select-arrow { 
+      position: absolute; top: 50%; right: 12px; transform: translateY(-50%); 
+      pointer-events: none; /* Click passes through to select */
+      color: #666;
+    }
+    
+    .date-display { font-size: 14px; color: #666; font-weight: 500; }
+
+    /* --- CARDS --- */
+    .card {
+      background: var(--bg-card); border-radius: var(--radius-l);
+      box-shadow: var(--shadow-card);
+      border: 1px solid #eee;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
     }
 
-    /* --- PRINT SPECIFIC STYLES START HERE --- */
+    .selection-header {
+      padding: 15px 20px; border-bottom: 1px solid #f0f0f0;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .card-title { font-size: 16px; font-weight: 600; margin: 0; }
+    
+    .teacher-grid { display: flex; flex-wrap: wrap; gap: 8px; padding: 15px 20px; }
+    .chip-label { cursor: pointer; }
+    .chip-label input { display: none; }
+    .chip-content {
+      display: flex; align-items: center; gap: 6px; padding: 6px 12px;
+      background: #f0f0f5; border-radius: 50px; font-size: 13px; font-weight: 500;
+      border: 1px solid transparent;
+    }
+    .chip-count { font-size: 10px; font-weight: 700; background: rgba(94, 94, 94, 0.1); padding: 5px 8px; border-radius: 40px; }
+    .chip-label input:checked + .chip-content { background: var(--accent-blue); color: white; }
+    .chip-label input:checked + .chip-content .chip-count { background: rgba(255,255,255,0.3); color: white; }
+    
+    .action-bar { padding: 0 20px 10px 20px; }
+    .btn-primary {
+      background: #000; color: #fff; border: none; border-radius: 50px;
+      padding: 10px 20px; font-size: 13px; font-weight: 600; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+
+    /* --- NORMAL TABLE STYLES --- */
+    .schedule-wrapper {
+      border-radius: var(--radius-l); 
+      background: #fff;
+      box-shadow: var(--shadow-card); 
+      border: 1px solid #eee;
+      overflow: hidden;
+    }
+    
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto; 
+    }
+
+    .modern-table { width: 100%; border-collapse: collapse; min-width: 900px; }
+    
+    .modern-table th {
+      text-align: left; padding: 14px 12px;
+      font-size: 11px; font-weight: 600; text-transform: uppercase; color: #888;
+      background: #f9f9f9;
+      border-bottom: 2px solid #eee;
+    }
+
+    .modern-table td {
+      padding: 12px; border-bottom: 1px solid #f0f0f0;
+      vertical-align: middle; height: 60px;
+      color: #333; font-size: 13px;
+    }
+
+    .modern-table tr:last-child td { border-bottom: none; }
+    .modern-table tr:hover td { background-color: #fcfcfc; }
+
+    /* Teacher Column Bold */
+    .modern-table td:first-child { 
+      font-weight: 600; color: #000; border-right: 1px solid #f5f5f5; 
+    }
+
+    .class-info { display: flex; flex-direction: column; gap: 3px; }
+    .class-id { font-weight: 700; font-size: 12px; }
+    .subject-pill {
+      display: inline-block; padding: 3px 8px; border-radius: 6px;
+      font-size: 10px; font-weight: 500; max-width: 120px; 
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      color: #444;
+    }
+    .cell-empty { color: #eee; font-size: 16px; text-align: center; display: block; }
+
+    /* --- PROVISIONAL TABLE --- */
+    #provisionalRoutineSection { border-left: 4px solid var(--accent-blue); display: none; }
+    .prov-table { width: 100%; border-collapse: collapse; }
+    .prov-table th { text-align: left; padding: 12px 20px; font-size: 11px; font-weight: 600; color: #666; border-bottom: 1px solid #ddd; background: #fafafa; }
+    .prov-table td { padding: 12px 20px; font-size: 14px; border-bottom: 1px solid #eee; }
+
+    /* --- UTILS --- */
+    .hidden { display: none !important; }
+    #loader-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(255,255,255,0.9); z-index: 3000; 
+      display: none; align-items: center; justify-content: center;
+    }
+    .simple-spinner { width: 30px; height: 30px; border: 3px solid #eee; border-top-color: #000; border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* --- PRINT --- */
+    #print-header { display: none; }
     @media print {
-      /* Hide everything in the body by default */
-      body * {
-        visibility: hidden;
-      }
-
-      /* Make the specific section and its children visible */
-      #provisionalRoutineSection,
-      #provisionalRoutineSection * {
-        visibility: visible;
-      }
-
-      /* Position the section at the absolute top left so it fills the page */
-      #provisionalRoutineSection {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        display: block !important; /* Ensure it is displayed */
-      }
-
-      /* Optional: Hide the 'Print' button itself on the paper */
-      .print-button {
-        display: none !important;
-      }
+      @page { margin: 0; size: auto; }
+      body { margin: 5mm !important; padding: 0 !important; background: white; -webkit-print-color-adjust: exact; }
+      .app-header, .control-bar, #teacherSelectionSection, .schedule-wrapper, .btn-primary, .btn-ghost, .selection-header { display: none !important; }
+      #print-header { display: block !important; text-align: center; border-bottom: none !important; margin-bottom: 5px; padding-bottom: 0; }
+      #print-header h1 { font-size: 16px; margin: 0 0 2px 0; }
+      #print-header p { font-size: 10px; color: #555; margin: 0; }
+      #provisionalRoutineSection { display: block !important; margin: 0 !important; border: none !important; box-shadow: none; width: 100%; }
+      table.prov-table { width: 100%; border-collapse: collapse; border: 1px solid #000; }
+      .prov-table th { background-color: #eee !important; color: #000 !important; font-weight: bold; font-size: 9px; padding: 4px; border: 1px solid #000 !important; }
+      .prov-table td { color: #000 !important; font-size: 10px; padding: 4px; border: 1px solid #000 !important; }
     }
-    /* --- PRINT SPECIFIC STYLES END HERE --- */
   </style>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 </head>
 
 <body>
 
-  <div
-    style="display: flex; align-items: center; justify-content: space-between; width: 100vw; height: 60px;color: #000000; padding: 0 30px; box-sizing: border-box;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <div class="logo">
-        <img src="timora.png" alt="Timora logo" class="logo-img">
-        <span class="logo-text">Timora.</span>
-      </div>
-      <button style=" background-color: transparent; border: none; color: #000000; font-size: 14px; cursor: pointer;
-        display: inline-flex; align-items: center; padding: 4px 8px;" id="navoptions"
-        onclick="window.location.href='Help.html';">
-        Help
-      </button>
-
-
-      <button
-        style="background-color: transparent; border: none; color: #000000; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; padding: 4px;"
-        id="navoptions" onclick="window.location.href='edit.html';">
-        Edit Schedule
-      </button>
-    </div>
-
-    <button
-      style="background-color: #000000; color: #ffffff; border: none; border-radius: 20px; padding: 10px 15px; font-size: 12px; cursor: pointer; font-weight: 500; margin-right: 10%; display: flex; align-items: center;"
-      onclick="window.location.href='error_report.html';">
-      Report Error
-      <span class="material-symbols-outlined" style="font-size: 16px; margin-left: 8px; font-weight: 600;">
-        error
-      </span>
+  <header class="app-header">
+    <div class="logo-text">D.H.B.S.S.P.V <span style="color:var(--accent-blue);">(H.S)</span></div>
+    <button class="btn-ghost" onclick="window.location.href='error_report.html'">
+      <span class="material-symbols-rounded" style="font-size:18px;">report_problem</span> Report
     </button>
-  </div>
+  </header>
 
-  <div
-    style="display: flex; align-items: center; justify-content: flex-start; width: 100vw; height: 20%; margin: 0; box-sizing: border-box; padding: 20px;">
-    <div
-      style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; width: 100%; max-width: 600px;">
-      <span id="currentDate" style="font-size: 24px; font-weight: 600; color: #352626; margin-bottom: 20px;">Date
-        Here</span>
-
-      <label for="daySelect"
-        style="font-weight: 400; font-size: 15px; color: #000000; margin-bottom: 2px; display: flex; align-items: center;">
-        Choose the Day
-        <span class="material-symbols-outlined" style="font-size: 20px; margin-left: 8px;">
-          arrow_right_alt
-        </span>
-      </label>
-
-      <div style="position: relative; width: 100%; max-width: 400px;">
-        <select id="daySelect" onchange="loadSchedule()"
-          style="border-radius:5px; padding: 10px 20px; font-size: 18px; color: #000000; border: 2px solid #000000; background-color: #fff; width: 100%; appearance: none; -webkit-appearance: none; -moz-appearance: none; position: relative; z-index: 1;">
-          <option value=""> Select </option>
+  <div class="container-fluid">
+    <div class="control-bar">
+      <div class="select-wrapper">
+        <select id="daySelect" onchange="loadSchedule()">
+          <option value="" selected disabled>Select Day</option>
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
           <option value="Wednesday">Wednesday</option>
           <option value="Thursday">Thursday</option>
           <option value="Friday">Friday</option>
           <option value="Saturday">Saturday</option>
-          <option value="Sunday" disabled>Sunday</option>
         </select>
-        <div
-          style="position: absolute; top: 10px; right: 10px; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #000000; pointer-events: none; z-index: 0;">
-        </div>
+        <span class="material-symbols-rounded select-arrow">expand_more</span>
       </div>
-    </div>
-  </div>
-
-  <div id="teacherSelectionSection" style="display: none; padding:2%;">
-    <div style="display: flex; align-items: center;">
-      <h3
-        style="font-weight: 400; font-size: 19px; display: inline-flex; align-items: center; margin: 0; margin-right: 20px;">
-        <span class="material-symbols-outlined" style="margin-right: 8px;">
-          select_check_box
-        </span>
-        Check all Absent Teachers
-      </h3>
-      <button id="preferencesButton" onclick="togglePreferences()"
-        style="display: inline-flex; align-items: center; background-color: #ffffff; color: rgb(212, 212, 212); border: 1px solid rgb(190, 190, 190); padding: 10px 15px; border-radius: 50px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
-        Preferences
-        <span class="material-symbols-outlined" style="font-size: 20px; margin-left: 8px;">settings</span>
-      </button>
+      <div id="currentDate" class="date-display">Loading...</div>
     </div>
 
-    <div style="color: orange;font-size: 14px;padding-left: 3px;">*Numbers in Orange Denotes the Number of Classes the
-      teacher have already in the Schedule.</div>
-    <div id="teacherList">
-      <div class="checkbox-container">
-        <input type="checkbox" id="teacher1">
-        <label for="teacher1">Teacher 1</label>
+    <div id="teacherSelectionSection" class="card hidden">
+      <div class="selection-header">
+        <div class="card-title">Mark Absent Teachers</div>
+        <button onclick="alert('Preferences')" class="btn-ghost">
+          <span class="material-symbols-rounded">settings</span> Settings
+        </button>
       </div>
-      <div class="checkbox-container">
-        <input type="checkbox" id="teacher2">
-        <label for="teacher2">Teacher 2</label>
+      <div id="teacherList" class="teacher-grid"></div>
+      <div class="action-bar">
+        <button onclick="generateProvisionalRoutine()" class="btn-primary">
+          Generate 
+          <!-- <span class="material-symbols-rounded">arrow_downward</span> -->
+        </button>
       </div>
-      </div>
-
-    <button onclick="generateProvisionalRoutine()" style="display: flex; align-items: center; cursor: pointer;">
-      Generate
-      <span class="material-symbols-outlined" style="font-size: 20px; margin-left: 8px;">
-        arrow_right_alt
-      </span>
-    </button>
-
-  </div>
-
-  <div id="provisionalRoutineSection" style="display: none;padding: 2%;">
-    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
-      <h2 style="margin: 0;">Provisional Routine</h2>
-      <button class="print-button" onclick="printSection()"
-        style="display: inline-flex; align-items: center; padding: 10px 20px; background-color: #007AFF; color: rgb(255, 255, 255); border: none; border-radius:50px;">
-        <span class="material-symbols-outlined" style="margin-right: 5px; font-size: 20px;">
-          print
-        </span>
-        Print
-      </button>
     </div>
 
-
-    <table>
-      <thead>
-        <tr>
-          <th>Class</th>
-          <th>Section</th>
-          <th>Original Teacher</th>
-          <th>Replacement Teacher</th>
-          <th>Time Slot</th>
+    <div id="provisionalRoutineSection" class="card">
+      <div class="selection-header">
+        <h3 class="card-title" style="color:var(--accent-blue);">Provisional Adjustments</h3>
+        <button class="btn-ghost" onclick="printSection()" style="color:var(--accent-blue);">
+          <span class="material-symbols-rounded">print</span> Print
+        </button>
+      </div>
+      <table class="prov-table">
+        <thead>
+          <tr>
+            <th>Class / Section</th>
+            <th>Original</th>
+            <th>Replacement</th>
+            <th>Time Slot</th>
           </tr>
-      </thead>
-      <tbody id="provisionalTable">
-        </tbody>
-    </table>
+        </thead>
+        <tbody id="provisionalTable"></tbody>
+      </table>
+    </div>
+
+    <div id="schedule-container" style="margin-bottom: 40px;"></div>
   </div>
+
+  <div id="print-header">
+    <!-- <h1>D.H.B.S.S.P.V(H.S)</h1> -->
+    <p id="print-meta-data">Provisional Routine</p>ho
+  </div>
+
+  <div id="loader-overlay"><div class="simple-spinner"></div></div>
 
   <script>
-    function showPrintSection() {
-      document.getElementById('provisionalRoutineSection').style.display = 'block';
+    let currentDayData = null; 
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date();
+      document.getElementById('currentDate').innerText = today.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    });
+
+    function getPeriodFromTime(timeStr) {
+      if(!timeStr) return null;
+      if(timeStr.includes("10:50")) return 1;
+      if(timeStr.includes("11:30")) return 2;
+      if(timeStr.includes("12:10")) return 3;
+      if(timeStr.includes("13:20")) return 4;
+      if(timeStr.includes("14:10")) return 5;
+      if(timeStr.includes("14:45")) return 6;
+      if(timeStr.includes("15:20")) return 7;
+      if(timeStr.includes("15:55")) return 8;
+      return null;
     }
 
-    // UPDATED FUNCTION: Simpler approach, relies on CSS Media Queries
+    function getSubjectColor(subject) {
+        if(!subject) return '#f5f5f5';
+        const s = subject.toLowerCase();
+        if(s.includes('math')) return '#E3F2FD'; 
+        if(s.includes('phys')) return '#E0F7FA'; 
+        if(s.includes('chem')) return '#F3E5F5'; 
+        if(s.includes('bio')) return '#E8F5E9';  
+        if(s.includes('eng')) return '#FFF3E0';  
+        if(s.includes('beng') || s.includes('lang')) return '#FBE9E7'; 
+        if(s.includes('hist') || s.includes('geog')) return '#FFF8E1'; 
+        if(s.includes('comp') || s.includes('app')) return '#ECEFF1'; 
+        return '#f5f5f5'; 
+    }
+
+    async function loadSchedule() {
+      const daySelect = document.getElementById('daySelect');
+      const selectedDay = daySelect.value;
+      const container = document.getElementById('schedule-container');
+      const teacherSection = document.getElementById('teacherSelectionSection');
+      const teacherListDiv = document.getElementById('teacherList');
+      const loader = document.getElementById('loader-overlay');
+      const provisionalSection = document.getElementById('provisionalRoutineSection');
+
+      if (!selectedDay) return;
+      loader.style.display = 'flex'; 
+      provisionalSection.style.display = 'none'; 
+      teacherSection.classList.add('hidden');
+      container.innerHTML = '';
+      teacherListDiv.innerHTML = '';
+      currentDayData = [];
+
+      try {
+        const response = await fetch(`schedule.json?t=${new Date().getTime()}`);
+        if (!response.ok) throw new Error("Could not find schedule.json");
+        const allData = await response.json();
+        const dayList = allData.schedule ? allData.schedule[selectedDay] : allData[selectedDay];
+
+        if (!dayList || !Array.isArray(dayList) || dayList.length === 0) {
+          container.innerHTML = `
+            <div style="text-align:center; padding:60px; color:#888; background:#fff; border-radius:16px; border:1px solid #eee;">
+                <span class="material-symbols-rounded" style="font-size:48px; display:block; margin-bottom:10px; color:#ccc;">event_busy</span>
+                No schedule data available for <b>${selectedDay}</b>.
+            </div>`;
+          loader.style.display = 'none';
+          return;
+        }
+
+        currentDayData = dayList;
+        const teacherMap = {};
+        const teacherClassCounts = {}; 
+        
+        dayList.forEach(item => {
+          const teacher = item.teacher;
+          const period = getPeriodFromTime(item.timeSlot);
+          if (teacher && period) {
+            if (!teacherMap[teacher]) teacherMap[teacher] = {};
+            teacherMap[teacher][period] = {
+                className: `${item.class.replace('Grade ', '')} ${item.section}`,
+                subject: item.subject
+            };
+            teacherClassCounts[teacher] = (teacherClassCounts[teacher] || 0) + 1;
+          }
+        });
+
+        const sortedTeachers = Object.keys(teacherClassCounts).sort();
+        
+        sortedTeachers.forEach(teacher => {
+          const count = teacherClassCounts[teacher];
+          teacherListDiv.innerHTML += `
+            <label class="chip-label">
+              <input type="checkbox" value="${teacher}">
+              <div class="chip-content">
+                ${teacher} <span class="chip-count">${count}</span>
+              </div>
+            </label>
+          `;
+        });
+        teacherSection.classList.remove('hidden');
+
+        let tableHTML = `
+          <div class="schedule-wrapper">
+          <div class="table-responsive">
+            <table class="modern-table">
+              <thead>
+                <tr>
+                  <th style="width:120px;">Teacher</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3 <span style="font-weight:400; opacity:0.6;">12:10</span></th>
+                  <th>4 <span style="font-weight:400; opacity:0.6;">13:20</span></th>
+                  <th>5 <span style="font-weight:400; opacity:0.6;">14:10</span></th>
+                  <th>6 <span style="font-weight:400; opacity:0.6;">14:45</span></th>
+                  <th>7 <span style="font-weight:400; opacity:0.6;">15:20</span></th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+        
+        sortedTeachers.forEach(teacher => {
+          tableHTML += `<tr><td>${teacher}</td>`;
+          for(let i=1; i<=7; i++) {
+            const data = teacherMap[teacher] ? teacherMap[teacher][i] : null;
+            if (data) {
+                const badgeColor = getSubjectColor(data.subject);
+                let dispSub = data.subject.length > 15 ? data.subject.substring(0,12) + '..' : data.subject;
+                tableHTML += `<td><div class="class-info"><span class="class-id">${data.className}</span><span class="subject-pill" style="background:${badgeColor}" title="${data.subject}">${dispSub}</span></div></td>`;
+            } else {
+                tableHTML += `<td><span class="cell-empty">·</span></td>`;
+            }
+          }
+          tableHTML += `</tr>`;
+        });
+        tableHTML += `</tbody></table></div></div>`;
+        container.innerHTML = tableHTML;
+
+      } catch (error) {
+        console.error(error);
+        container.innerHTML = `<div style="text-align:center; padding:40px; color:red;">Error loading data: ${error.message}</div>`;
+      } finally {
+        loader.style.display = 'none';
+      }
+    }
+
+    function generateProvisionalRoutine() {
+      const selectedCheckboxes = document.querySelectorAll('#teacherList input:checked');
+      if (selectedCheckboxes.length === 0) {
+        alert("Please tap on the teachers who are absent today.");
+        return;
+      }
+      
+      const absentTeachers = Array.from(selectedCheckboxes).map(cb => cb.value);
+      const tbody = document.getElementById('provisionalTable');
+      tbody.innerHTML = ''; 
+
+      const affectedClasses = currentDayData.filter(item => absentTeachers.includes(item.teacher));
+      const allTeachers = [...new Set(currentDayData.map(item => item.teacher))];
+      let assignedReplacements = {}; 
+
+      affectedClasses.forEach(classItem => {
+         const timeSlot = classItem.timeSlot;
+         const originalSubject = classItem.subject;
+         if(!assignedReplacements[timeSlot]) assignedReplacements[timeSlot] = [];
+         
+         const freeTeachers = allTeachers.filter(t => {
+            if (absentTeachers.includes(t)) return false;
+            const isBusyRegular = currentDayData.some(entry => entry.teacher === t && entry.timeSlot === timeSlot);
+            if (isBusyRegular) return false;
+            const isBusySub = assignedReplacements[timeSlot].includes(t);
+            if (isBusySub) return false;
+            return true;
+         });
+
+         let finalReplacement = "No Sub";
+         const sameSubjectTeacher = freeTeachers.find(t => {
+            return currentDayData.some(entry => entry.teacher === t && entry.subject === originalSubject);
+         });
+         
+         if (sameSubjectTeacher) {
+            finalReplacement = sameSubjectTeacher;
+         } else if (freeTeachers.length > 0) {
+            finalReplacement = freeTeachers[0];
+         }
+         
+         if (finalReplacement !== "No Sub") {
+            assignedReplacements[timeSlot].push(finalReplacement);
+         }
+
+         const replacementHTML = finalReplacement === "No Sub" ? "<i>No Sub</i>" : `<b>${finalReplacement}</b>`;
+         tbody.innerHTML += `
+            <tr class="prov-row">
+              <td><b>${classItem.class}</b> ${classItem.section}</td>
+              <td style="text-decoration:none;color:#FF7722;">${classItem.teacher}</td>
+              <td>${replacementHTML}</td>
+              <td>${classItem.timeSlot}</td>
+            </tr>
+         `;
+      });
+
+      const section = document.getElementById('provisionalRoutineSection');
+      section.style.display = 'block';
+      section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
     function printSection() {
+      const now = new Date();
+      document.getElementById('print-meta-data').innerText = `${now.toLocaleDateString()} | ${now.toLocaleTimeString()}`;
       window.print();
     }
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const overlay = document.getElementById("preferencesOverlay");
-      // Add a check to prevent error if element doesn't exist
-      if (overlay) {
-        overlay.style.display = "none";
-        loadPreferences();
-      }
-    });
-
-    function togglePreferences() {
-      const overlay = document.getElementById("preferencesOverlay");
-      const preferencesSection = document.getElementById("preferencesSection");
-
-      // Safety check in case elements are missing from this snippet
-      if (!overlay || !preferencesSection) return;
-
-      if (overlay.style.display === "flex") {
-        preferencesSection.classList.remove("show");
-        setTimeout(() => {
-          overlay.style.display = "none";
-        }, 300);
-      } else {
-        overlay.style.display = "flex";
-        setTimeout(() => {
-          preferencesSection.classList.add("show");
-        }, 10);
-      }
-    }
-
-    function savePreferences() {
-      togglePreferences();
-    }
-  </script>
-
-
-
-  <div id="schedule-container" style="padding: 2%;">
-    </div>
-
-  <div id="loader-overlay" class="loader-overlay">
-    <div class="loader"></div>
-    <br>
-    <div class="loader-text">Generating
-      <span class="dots">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </span>
-    </div>
-
-    <link rel="stylesheet" href="Asset/CSS/animation.css">
-  </div>
-  <script>
-    window.si = window.si || function () {
-      (window.siq = window.siq || []).push(arguments);
-    };
-  </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
-
 </html>
