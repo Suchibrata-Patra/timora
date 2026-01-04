@@ -1,829 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
-    rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300&display=swap" rel="stylesheet">
-
-
   <title>Provisional</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.png">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
   <style>
+    /* --- DESIGN SYSTEM --- */
+    :root {
+      --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --bg-body: #F5F5F7;
+      --bg-card: #FFFFFF;
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --accent-blue: #FF7722;
+      --danger: #FF3B30;
+      --shadow-card: 0 4px 12px rgba(0,0,0,0.05);
+      --radius-l: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      /* background-image: url('https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/56/71/watsonx-timeline-build.gif'); */
-      background-size: contain;
-      font-family: "Roboto", sans-serif;
-      background-repeat: no-repeat;
-      background-color: #f8f7f4;
-      color: #000000;
-      margin: 0;
-      /* Reset margin to 0 to ensure full-width sections */
+      margin: 0; padding: 0;
+      font-family: var(--font-stack);
+      background-color: var(--bg-body);
+      color: var(--text-primary);
+      padding-bottom: 60px;
     }
 
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100vw;
-      height: 70px;
-      background-color: #ffffff;
-      color: #000000;
-      padding-left: 05px;
-      padding-right: 05px;
-      padding-bottom: 20px;
-      padding-top: 10px;
-      box-sizing: border-box;
-      border-bottom: 1px solid #e0e0e0;
-      position: relative;
+    /* --- LAYOUT --- */
+    .container-fluid { width: 95%; max-width: 1600px; margin: 0 auto; }
+
+    /* --- HEADER --- */
+    .app-header {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; height: 60px; padding: 0 20px;
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky; top: 0; z-index: 2000; /* Stays on top */
     }
-
-    .navbar .logo {
-      font-size: 32px;
-      font-weight: 700;
-      color: #000000;
+    .logo-text { font-weight: 700; font-size: 19px; }
+    
+    .btn-ghost {
+      background: transparent; border: 1px solid #eee; cursor: pointer;
+      font-size: 13px; font-weight: 500; color: #333;
+      padding: 6px 12px; border-radius: 50px;
+      display: flex; align-items: center; gap: 5px;
     }
+    .btn-ghost:hover { background: #f5f5f5; }
 
-    .navbar .burger-icon {
-      display: none;
-      cursor: pointer;
-      font-size: 30px;
+    /* --- CONTROLS --- */
+    .control-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0;
     }
-
-    .navbar .nav-options {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      transition: all 2s ease;
-    }
-
-    .navbar .nav-options button {
-      background-color: transparent;
-      border: none;
-      color: #000000;
-      font-size: 14px;
-      cursor: pointer;
-      padding: 10px 15px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      border-radius: 25px;
-    }
-
-    .navbar .nav-options button:hover {
-      background-color: #f0f0f0;
-      color: #333333;
-    }
-
-    .navbar .nav-options .btn-report-error {
-      background-color: #000000;
-      color: #ffffff;
-      border-radius: 25px;
-      padding: 10px 20px;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar .nav-options .btn-report-error:hover {
-      background-color: #333333;
-    }
-
-    .navbar .nav-options .btn-report-error .material-symbols-outlined {
-      font-size: 18px;
-      margin-left: 8px;
-    }
-
-    .main-heading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100vw;
-      /* Ensure full width */
-      height: 75vh;
-      text-align: center;
-      color: #0d0c22;
-      padding: 0 20px;
-      background: #f8f7f4;
-      /* border-radius: 10px; */
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-      box-sizing: border-box;
-      /* Ensure padding does not affect width */
-      margin: 0;
-      margin-top: 15px;
-      /* Reset margin to ensure full width */
-      letter-spacing: -0.5px;
-
-    }
-
-    .main-heading h1 {
-      font-weight: 400;
-      font-size: 72px;
-      margin-bottom: 20px;
-      font-family: "Source Serif 4", serif;
-      letter-spacing: -0.5px;
-
-    }
-
-    .main-heading p {
-      font-size: 1.25rem;
-      margin-bottom: 20px;
-      padding-left: 4%;
-      padding-right: 4%;
-      font-weight: 400;
-    }
-
-    .btn-custom {
-      padding: 14px 28px;
-      color: rgb(255, 255, 255);
-      border: none;
-      background-color: #000000;
-      border-radius: 50px;
-      font-size: 18px;
-      font-weight: 300;
-      transition: background-color 1s ease, transform 0.3s ease;
-    }
-
-    .btn-custom:hover {
-      background-color: #333333;
-      transform: scale(1.05);
-    }
-
-    .container {
-      padding: 2rem 5%;
-    }
-
-    .rescheduling-section {
-      margin-top: 5rem;
-    }
-
-    .rescheduling-section img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .footer {
-      position: relative;
-      bottom: 0;
-      width: 100%;
-      background-color: #000000;
-      color: #ffffff;
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 20px;
-    }
-
-    .footer .social-icons {
-      margin: 10px 0;
-    }
-
-    .footer .social-icons a {
-      color: #ffffff;
-      font-size: 24px;
-      margin: 0 10px;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer .social-icons a:hover {
-      color: #cccccc;
-    }
-
-    @media (max-width: 992px) {
-      .main-heading h1 {
-        font-size: 48px;
-        font-weight: 400;
-        letter-spacing: -0.5px;
-      }
-
-      .main-heading p {
-        font-size: 18px;
-        font-weight: 400;
-
-      }
-
-      .btn-custom {
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .navbar .nav-options {
-        display: none;
-      }
-
-      .navbar .burger-icon {
-        display: block;
-      }
-
-      .container {
-        padding: 3%;
-      }
-
-      .main-heading {
-        height: 70vh;
-
-      }
-
-      .main-heading h1 {
-        font-size: 48px;
-        font-weight: 400;
-        letter-spacing: -0.5px;
-
-      }
-
-      .main-heading p {
-        font-size: 18px;
-        font-weight: 400;
-
-      }
-
-      .btn-custom {
-        font-size: 1rem;
-        padding: 12px 16px;
-      }
-
-      .footer {
-        font-size: 0.85rem;
-        padding: 15px;
-      }
-    }
-
-    @media (max-width: 576px) {
+    
+    /* === FIX FOR DOUBLE ARROWS === */
+    .select-wrapper { position: relative; width: 220px; }
+    
+    select#daySelect {
+      width: 100%; padding: 10px 14px; font-size: 15px; font-weight: 600;
+      border: 1px solid #ddd; border-radius: 10px;
+      background-color: #fff; 
+      color: #333; cursor: pointer;
       
-      body {
-        font-size: 1rem;
-      }
+      /* KEY FIX: Force hide native browser arrow */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: none;
+    }
+    
+    /* Hide arrow in IE/Edge */
+    select#daySelect::-ms-expand { display: none; }
+    
+    .select-arrow { 
+      position: absolute; top: 50%; right: 12px; transform: translateY(-50%); 
+      pointer-events: none; /* Click passes through to select */
+      color: #666;
+    }
+    
+    .date-display { font-size: 14px; color: #666; font-weight: 500; }
 
-      .main-heading h1 {
-        font-size: 48px;
-        font-weight: 400;
-        letter-spacing: -0.5px;
-
-      }
-
-      .main-heading p {
-        font-size: 10px;
-        padding-left: 0%;
-        padding-right: 0%;
-        text-align: justify;
-        font-size: 18px;
-        font-weight: 400;
-      }
-
-      .btn-custom {
-        font-size: 1rem;
-        padding: 14px 28px;
-      }
-
-      .footer {
-        font-size: 0.75rem;
-        padding: 10px;
-      }
+    /* --- CARDS --- */
+    .card {
+      background: var(--bg-card); border-radius: var(--radius-l);
+      box-shadow: var(--shadow-card);
+      border: 1px solid #eee;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
     }
 
-    /* Ensure nav-options is hidden on mobile by default */
-    .nav-options {
-      display: flex;
+    .selection-header {
+      padding: 15px 20px; border-bottom: 1px solid #f0f0f0;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .card-title { font-size: 16px; font-weight: 600; margin: 0; }
+    
+    .teacher-grid { display: flex; flex-wrap: wrap; gap: 8px; padding: 15px 20px; }
+    .chip-label { cursor: pointer; }
+    .chip-label input { display: none; }
+    .chip-content {
+      display: flex; align-items: center; gap: 6px; padding: 6px 12px;
+      background: #f0f0f5; border-radius: 50px; font-size: 13px; font-weight: 500;
+      border: 1px solid transparent;
+    }
+    .chip-count { font-size: 10px; font-weight: 700; background: rgba(94, 94, 94, 0.1); padding: 5px 8px; border-radius: 40px; }
+    .chip-label input:checked + .chip-content { background: var(--accent-blue); color: white; }
+    .chip-label input:checked + .chip-content .chip-count { background: rgba(255,255,255,0.3); color: white; }
+    
+    .action-bar { padding: 0 20px 10px 20px; }
+    .btn-primary {
+      background: #000; color: #fff; border: none; border-radius: 50px;
+      padding: 10px 20px; font-size: 13px; font-weight: 600; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
     }
 
-    /* Show nav-options when the menu is toggled */
-    .nav-options.mobile-menu {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      /* Adjust as needed */
-      right: 0;
-      background-color: #ffffff;
-      border: 1px solid #e0e0e0;
+    /* --- NORMAL TABLE STYLES --- */
+    .schedule-wrapper {
+      border-radius: var(--radius-l); 
+      background: #fff;
+      box-shadow: var(--shadow-card); 
+      border: 1px solid #eee;
+      overflow: hidden;
+    }
+    
+    .table-responsive {
       width: 100%;
-      padding: 0px;
-      padding-bottom: -10px;
-      z-index: 9000;
+      overflow-x: auto; 
     }
 
-    .burger-icon {
-      display: block;
+    .modern-table { width: 100%; border-collapse: collapse; min-width: 900px; }
+    
+    .modern-table th {
+      text-align: left; padding: 14px 12px;
+      font-size: 11px; font-weight: 600; text-transform: uppercase; color: #888;
+      background: #f9f9f9;
+      border-bottom: 2px solid #eee;
     }
 
-    @media (min-width: 769px) {
-      .navbar .nav-options {
-        display: flex;
-      }
-
-      .navbar .burger-icon {
-        display: none;
-      }
-
-      .nav-options.mobile-menu {
-        display: none;
-      }
+    .modern-table td {
+      padding: 12px; border-bottom: 1px solid #f0f0f0;
+      vertical-align: middle; height: 60px;
+      color: #333; font-size: 13px;
     }
 
-    .search-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 20px;
+    .modern-table tr:last-child td { border-bottom: none; }
+    .modern-table tr:hover td { background-color: #fcfcfc; }
+
+    /* Teacher Column Bold */
+    .modern-table td:first-child { 
+      font-weight: 600; color: #000; border-right: 1px solid #f5f5f5; 
     }
 
-    .search-input {
-      border-radius: 50px;
-      padding: 10px;
-      border: 1px solid rgb(220, 220, 220);
-      /* Default border color */
-      width: 300px;
-      font-size: 14px;
-      outline: none;
-      padding-left: 20px;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      /* Smooth transition for border color and box-shadow */
+    .class-info { display: flex; flex-direction: column; gap: 3px; }
+    .class-id { font-weight: 700; font-size: 12px; }
+    .subject-pill {
+      display: inline-block; padding: 3px 8px; border-radius: 6px;
+      font-size: 10px; font-weight: 500; max-width: 120px; 
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      color: #444;
     }
+    .cell-empty { color: #eee; font-size: 16px; text-align: center; display: block; }
 
-    .search-input:hover,
-    .search-input:focus {
-      border: 1px solid #d8abed;
-      /* Border color on hover and focus */
-      box-shadow: 0 0 8px rgba(232, 161, 226, 0.2);
-      /* Box-shadow effect on hover and focus */
+    /* --- PROVISIONAL TABLE --- */
+    #provisionalRoutineSection { border-left: 4px solid var(--accent-blue); display: none; }
+    .prov-table { width: 100%; border-collapse: collapse; }
+    .prov-table th { text-align: left; padding: 12px 20px; font-size: 11px; font-weight: 600; color: #666; border-bottom: 1px solid #ddd; background: #fafafa; }
+    .prov-table td { padding: 12px 20px; font-size: 14px; border-bottom: 1px solid #eee; }
+
+    /* --- UTILS --- */
+    .hidden { display: none !important; }
+    #loader-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(255,255,255,0.9); z-index: 3000; 
+      display: none; align-items: center; justify-content: center;
     }
+    .simple-spinner { width: 30px; height: 30px; border: 3px solid #eee; border-top-color: #000; border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-    .search-button {
-      border: none;
-      background-color: #007bff;
-      color: white;
-      border-radius: 50px;
-      padding: 5px 10px;
-      margin-left: 10px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .search-button:hover {
-      background-color: #0056b3;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      /* Align items vertically centered */
-      padding-left: 5%;
-    }
-
-    .logo-img {
-      height: 45px;
-      /* Adjust the height as needed */
-      margin-right: 10px;
-      /* Space between the image and text */
-    }
-
-    .logo-text {
-      font-size: 24px;
-      /* Adjust the font size as needed */
-      font-weight: bold;
-      /* Make text bold for emphasis */
-      color: #333;
-      /* Text color */
-      /* Add additional styling as needed */
+    /* --- PRINT --- */
+    #print-header { display: none; }
+    @media print {
+      @page { margin: 0; size: auto; }
+      body { margin: 5mm !important; padding: 0 !important; background: white; -webkit-print-color-adjust: exact; }
+      .app-header, .control-bar, #teacherSelectionSection, .schedule-wrapper, .btn-primary, .btn-ghost, .selection-header { display: none !important; }
+      #print-header { display: block !important; text-align: center; border-bottom: none !important; margin-bottom: 5px; padding-bottom: 0; }
+      #print-header h1 { font-size: 16px; margin: 0 0 2px 0; }
+      #print-header p { font-size: 10px; color: #555; margin: 0; }
+      #provisionalRoutineSection { display: block !important; margin: 0 !important; border: none !important; box-shadow: none; width: 100%; }
+      table.prov-table { width: 100%; border-collapse: collapse; border: 1px solid #000; }
+      .prov-table th { background-color: #eee !important; color: #000 !important; font-weight: bold; font-size: 9px; padding: 4px; border: 1px solid #000 !important; }
+      .prov-table td { color: #000 !important; font-size: 10px; padding: 4px; border: 1px solid #000 !important; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <!-- Logo Text -->
-    <div class="logo">
-      <img src="/Asset/timora.png" alt="Timora logo" class="logo-img">
-      <span class="logo-text">Timora.</span>
+  <header class="app-header">
+    <div class="logo-text">D.H.B.S.S.P.V <span style="color:var(--accent-blue);">(H.S)</span></div>
+    <button class="btn-ghost" onclick="window.location.href='error_report.html'">
+      <span class="material-symbols-rounded" style="font-size:18px;">report_problem</span> Report
+    </button>
+  </header>
+
+  <div class="container-fluid">
+    <div class="control-bar">
+      <div class="select-wrapper">
+        <select id="daySelect" onchange="loadSchedule()">
+          <option value="" selected disabled>Select Day</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+        </select>
+        <span class="material-symbols-rounded select-arrow">expand_more</span>
+      </div>
+      <div id="currentDate" class="date-display">Loading...</div>
     </div>
 
-
-    <!-- Burger Icon (visible on mobile) -->
-    <div class="burger-icon" onclick="toggleMenu()">☰</div>
-
-    <!-- Container for buttons (hidden on mobile) -->
-    <div class="nav-options">
-      <!-- Help Button -->
-      <button onclick="window.location.href='#';">Refer</button>
-      <button onclick="window.location.href='#';">Help</button>
-      <!-- Edit Schedule Button -->
-      <button onclick="window.location.href='edit.html';">Inst. List</button>
-      <!-- Edit Schedule Button -->
-      <button onclick="window.location.href='edit.html';">Why Open Source ?</button>
-
-
-      <input type="search" id="searchBar" class="search-input" placeholder="Search..." style="font-weight: 200;">
-      <!-- Report Error Button -->
-      <button class="btn-report-error" onclick="window.location.href='error_report.html';">
-        Register
-        <!-- <span class="material-symbols-outlined">error</span> -->
-      </button>
+    <div id="teacherSelectionSection" class="card hidden">
+      <div class="selection-header">
+        <div class="card-title">Mark Absent Teachers</div>
+        <button onclick="alert('Preferences')" class="btn-ghost">
+          <span class="material-symbols-rounded">settings</span> Settings
+        </button>
+      </div>
+      <div id="teacherList" class="teacher-grid"></div>
+      <div class="action-bar">
+        <button onclick="generateProvisionalRoutine()" class="btn-primary">
+          Generate 
+          <!-- <span class="material-symbols-rounded">arrow_downward</span> -->
+        </button>
+      </div>
     </div>
 
+    <div id="provisionalRoutineSection" class="card">
+      <div class="selection-header">
+        <h3 class="card-title" style="color:var(--accent-blue);">Provisional Adjustments</h3>
+        <button class="btn-ghost" onclick="printSection()" style="color:var(--accent-blue);">
+          <span class="material-symbols-rounded">print</span> Print
+        </button>
+      </div>
+      <table class="prov-table">
+        <thead>
+          <tr>
+            <th>Class / Section</th>
+            <th>Original</th>
+            <th>Replacement</th>
+            <th>Time Slot</th>
+          </tr>
+        </thead>
+        <tbody id="provisionalTable"></tbody>
+      </table>
+    </div>
 
+    <div id="schedule-container" style="margin-bottom: 40px;"></div>
+  </div>
 
+  <div id="print-header">
+    <!-- <h1>D.H.B.S.S.P.V(H.S)</h1> -->
+    <p id="print-meta-data">Provisional Routine</p>ho
+  </div>
 
+  <div id="loader-overlay"><div class="simple-spinner"></div></div>
 
-    <!-- Main Landing Page Heading -->
-    <div class="main-heading">
-      <div>
-        <button class="color-changing-button"> Trusted by 100+ Schools</button> <br>
-        <style>
-          @keyframes colorChange {
-            0% {
-              background-color: #d7c6ee;
-            }
+  <script>
+    let currentDayData = null; 
 
-            25% {
-              background-color: #fae296;
-            }
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date();
+      document.getElementById('currentDate').innerText = today.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    });
 
-            50% {
-              background-color: #f1eec4;
-            }
+    function getPeriodFromTime(timeStr) {
+      if(!timeStr) return null;
+      if(timeStr.includes("10:50")) return 1;
+      if(timeStr.includes("11:30")) return 2;
+      if(timeStr.includes("12:10")) return 3;
+      if(timeStr.includes("13:20")) return 4;
+      if(timeStr.includes("14:10")) return 5;
+      if(timeStr.includes("14:45")) return 6;
+      if(timeStr.includes("15:20")) return 7;
+      if(timeStr.includes("15:55")) return 8;
+      return null;
+    }
 
-            75% {
-              background-color: #dfd7e6;
-            }
+    function getSubjectColor(subject) {
+        if(!subject) return '#f5f5f5';
+        const s = subject.toLowerCase();
+        if(s.includes('math')) return '#E3F2FD'; 
+        if(s.includes('phys')) return '#E0F7FA'; 
+        if(s.includes('chem')) return '#F3E5F5'; 
+        if(s.includes('bio')) return '#E8F5E9';  
+        if(s.includes('eng')) return '#FFF3E0';  
+        if(s.includes('beng') || s.includes('lang')) return '#FBE9E7'; 
+        if(s.includes('hist') || s.includes('geog')) return '#FFF8E1'; 
+        if(s.includes('comp') || s.includes('app')) return '#ECEFF1'; 
+        return '#f5f5f5'; 
+    }
 
-            100% {
-              background-color: #ffade3;
+    async function loadSchedule() {
+      const daySelect = document.getElementById('daySelect');
+      const selectedDay = daySelect.value;
+      const container = document.getElementById('schedule-container');
+      const teacherSection = document.getElementById('teacherSelectionSection');
+      const teacherListDiv = document.getElementById('teacherList');
+      const loader = document.getElementById('loader-overlay');
+      const provisionalSection = document.getElementById('provisionalRoutineSection');
+
+      if (!selectedDay) return;
+      loader.style.display = 'flex'; 
+      provisionalSection.style.display = 'none'; 
+      teacherSection.classList.add('hidden');
+      container.innerHTML = '';
+      teacherListDiv.innerHTML = '';
+      currentDayData = [];
+
+      try {
+        const response = await fetch(`schedule.json?t=${new Date().getTime()}`);
+        if (!response.ok) throw new Error("Could not find schedule.json");
+        const allData = await response.json();
+        const dayList = allData.schedule ? allData.schedule[selectedDay] : allData[selectedDay];
+
+        if (!dayList || !Array.isArray(dayList) || dayList.length === 0) {
+          container.innerHTML = `
+            <div style="text-align:center; padding:60px; color:#888; background:#fff; border-radius:16px; border:1px solid #eee;">
+                <span class="material-symbols-rounded" style="font-size:48px; display:block; margin-bottom:10px; color:#ccc;">event_busy</span>
+                No schedule data available for <b>${selectedDay}</b>.
+            </div>`;
+          loader.style.display = 'none';
+          return;
+        }
+
+        currentDayData = dayList;
+        const teacherMap = {};
+        const teacherClassCounts = {}; 
+        
+        dayList.forEach(item => {
+          const teacher = item.teacher;
+          const period = getPeriodFromTime(item.timeSlot);
+          if (teacher && period) {
+            if (!teacherMap[teacher]) teacherMap[teacher] = {};
+            teacherMap[teacher][period] = {
+                className: `${item.class.replace('Grade ', '')} ${item.section}`,
+                subject: item.subject
+            };
+            teacherClassCounts[teacher] = (teacherClassCounts[teacher] || 0) + 1;
+          }
+        });
+
+        const sortedTeachers = Object.keys(teacherClassCounts).sort();
+        
+        sortedTeachers.forEach(teacher => {
+          const count = teacherClassCounts[teacher];
+          teacherListDiv.innerHTML += `
+            <label class="chip-label">
+              <input type="checkbox" value="${teacher}">
+              <div class="chip-content">
+                ${teacher} <span class="chip-count">${count}</span>
+              </div>
+            </label>
+          `;
+        });
+        teacherSection.classList.remove('hidden');
+
+        let tableHTML = `
+          <div class="schedule-wrapper">
+          <div class="table-responsive">
+            <table class="modern-table">
+              <thead>
+                <tr>
+                  <th style="width:120px;">Teacher</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3 <span style="font-weight:400; opacity:0.6;">12:10</span></th>
+                  <th>4 <span style="font-weight:400; opacity:0.6;">13:20</span></th>
+                  <th>5 <span style="font-weight:400; opacity:0.6;">14:10</span></th>
+                  <th>6 <span style="font-weight:400; opacity:0.6;">14:45</span></th>
+                  <th>7 <span style="font-weight:400; opacity:0.6;">15:20</span></th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+        
+        sortedTeachers.forEach(teacher => {
+          tableHTML += `<tr><td>${teacher}</td>`;
+          for(let i=1; i<=7; i++) {
+            const data = teacherMap[teacher] ? teacherMap[teacher][i] : null;
+            if (data) {
+                const badgeColor = getSubjectColor(data.subject);
+                let dispSub = data.subject.length > 15 ? data.subject.substring(0,12) + '..' : data.subject;
+                tableHTML += `<td><div class="class-info"><span class="class-id">${data.className}</span><span class="subject-pill" style="background:${badgeColor}" title="${data.subject}">${dispSub}</span></div></td>`;
+            } else {
+                tableHTML += `<td><span class="cell-empty">·</span></td>`;
             }
           }
+          tableHTML += `</tr>`;
+        });
+        tableHTML += `</tbody></table></div></div>`;
+        container.innerHTML = tableHTML;
 
-          .color-changing-button {
-            font-family: "Roboto", sans-serif;
-            background-color: pink;
-            /* Initial color */
-            border-radius: 50px;
-            padding: 4px 20px;
-            margin-top: 20px;
-            border: none;
-            color: rgb(0, 0, 0);
-            /* Optional: Adjust text color for better contrast */
-            font-size: 16px;
-            /* Optional: Adjust font size */
-            animation: colorChange 60s infinite;
-            /* Apply the animation */
-          }
-        </style>
-        <!-- <h1>Best <span style="color: red;margin-bottom: -30px;">free</span> Rescheduling Software</h1> -->
-
-        <!-- Include the Google Font in the head of your document -->
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
-
-        <!-- Apply the handwritten font in the inline CSS -->
-        <h1 style="position: relative; display: inline-block;">
-          Best
-          <span style="
-    color: red; 
-    position: absolute; 
-    top: 10px; /* Adjust the vertical position */
-    font-size: 30px;
-    font-weight: 300;
-    font-family: 'Dancing Script', cursive; /* Handwritten font */
-    transform: rotate(-20deg); /* No rotation */
-    transform-origin: left bottom; /* Adjust origin of rotation */
-  ">free </span>
-          <span style="padding-left:32px;">Class Rescheduling Software.</span>
-        </h1>
-
-
-
-        <h3 style="color: #0d0c22;font-family:'Courier New', Courier, monospace;line-height: 18px / 32px;">Say 👋🏻
-          to Timora, to ease your day to day rescheduling works of your School.</h3>
-
-
-        <a href="scheduler.html" style="text-decoration: none;"><button class="btn-custom"
-            style="margin-top: 30px;margin-bottom:10px;">Get
-            Started</button></a>
-      </div>
-    </div>
-
-    <!-- Scrolling Bars  -->
-    <div class="scrolling-wrapper">
-      <div class="scrolling-content">
-        <!-- Content duplicated for continuous scrolling -->
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1719339837856-bcff37200a01?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8fA%3D%3D"
-            alt="Image 1">
-          <div class="card-text">
-            Precision Design
-            <br>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              UI</button>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              UX</button>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              Design</button>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1721332154191-ba5f1534266e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8"
-            alt="Image 2">
-          <div class="card-text">
-            Precision Design
-            <br>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              UI</button>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              UX</button>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              Design</button>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1723877896976-2526130e50c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDh8MjFhcGMzVFVFVm98fGVufDB8fHx8fA%3D%3D"
-            alt="Image 3">
-          <div class="card-text">
-            Precision Design
-            <br>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              UI</button>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              UX</button>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              Design</button>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1606355555437-59e0b3f0a703?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXJ0aXN0fGVufDB8fDB8fHww"
-            alt="Image 4">
-          <div class="card-text">
-            Precision Design
-            <br>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              UI</button>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              UX</button>
-            <button
-              style="background:none;border: 1px solid white;color: rgb(245, 245, 245);border-radius: 50px;padding: 1px 15px;">
-              Design</button>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1597310502621-f807d2fca611?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fGFydGlzdHxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Image 5">
-          <div class="card-text">Image 2 Description</div>
-
-        </div>
-        <!-- Duplicated Content for seamless loop -->
-        <div class="card">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1672287578699-618ea6dbcc9e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fGFydGlzdHxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Image 1">
-          <div class="card-text">Image 2 Description</div>
-
-        </div>
-        <div class="card">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1674815483030-efd14e5e774b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fGFydGlzdHxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Image 2">
-          <div class="card-text">Image 2 Description</div>
-
-        </div>
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1608402515433-d43f0fc28812?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGFydGlzdHxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Image 3">
-          <div class="card-text">Image 2 Description</div>
-
-        </div>
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1610493471707-14e3fb1db20e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fGFydGlzdHxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Image 4">
-          <div class="card-text">Image 2 Description</div>
-
-        </div>
-        <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1610131559347-9b8d99534507?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGFydGlzdHxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Image 5">
-          <div class="card-text">Image 2 Description</div>
-
-        </div>
-      </div>
-    </div>
-
-    <style>
-      .scrolling-wrapper {
-        margin: 0px;
-        display: flex;
-        overflow: hidden;
-        white-space: nowrap;
-        width: 100%;
-        position: relative;
+      } catch (error) {
+        console.error(error);
+        container.innerHTML = `<div style="text-align:center; padding:40px; color:red;">Error loading data: ${error.message}</div>`;
+      } finally {
+        loader.style.display = 'none';
       }
+    }
 
-      .scrolling-content {
-        display: flex;
-        animation: scroll 25s linear infinite;
+    function generateProvisionalRoutine() {
+      const selectedCheckboxes = document.querySelectorAll('#teacherList input:checked');
+      if (selectedCheckboxes.length === 0) {
+        alert("Please tap on the teachers who are absent today.");
+        return;
       }
+      
+      const absentTeachers = Array.from(selectedCheckboxes).map(cb => cb.value);
+      const tbody = document.getElementById('provisionalTable');
+      tbody.innerHTML = ''; 
 
-      .card {
-        display: inline-block;
-        width: 250px;
-        height: 380px;
-        margin-right: 10px;
-        box-sizing: border-box;
-        overflow: hidden;
-        padding: 0;
-        border-radius: 15px;
-      }
+      const affectedClasses = currentDayData.filter(item => absentTeachers.includes(item.teacher));
+      const allTeachers = [...new Set(currentDayData.map(item => item.teacher))];
+      let assignedReplacements = {}; 
 
+      affectedClasses.forEach(classItem => {
+         const timeSlot = classItem.timeSlot;
+         const originalSubject = classItem.subject;
+         if(!assignedReplacements[timeSlot]) assignedReplacements[timeSlot] = [];
+         
+         const freeTeachers = allTeachers.filter(t => {
+            if (absentTeachers.includes(t)) return false;
+            const isBusyRegular = currentDayData.some(entry => entry.teacher === t && entry.timeSlot === timeSlot);
+            if (isBusyRegular) return false;
+            const isBusySub = assignedReplacements[timeSlot].includes(t);
+            if (isBusySub) return false;
+            return true;
+         });
 
-      .card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 0px;
-        shape-outside: none;
-        box-shadow: inset 0 -100px 100px rgba(0, 0, 0, 1);
-        /* Darker inner shadow at the bottom */
-      }
+         let finalReplacement = "No Sub";
+         const sameSubjectTeacher = freeTeachers.find(t => {
+            return currentDayData.some(entry => entry.teacher === t && entry.subject === originalSubject);
+         });
+         
+         if (sameSubjectTeacher) {
+            finalReplacement = sameSubjectTeacher;
+         } else if (freeTeachers.length > 0) {
+            finalReplacement = freeTeachers[0];
+         }
+         
+         if (finalReplacement !== "No Sub") {
+            assignedReplacements[timeSlot].push(finalReplacement);
+         }
 
-      .card-text {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 45px;
-        background: linear-gradient(to bottom,
-            /* Gradient direction */
-            rgba(0, 0, 0, 0) 0%,
-            /* Transparent at the top */
-            rgba(0, 0, 0) 100%
-            /* Darker at the bottom */
-          );
-        color: white;
-        font-size: 16px;
-        text-align: center;
-      }
+         const replacementHTML = finalReplacement === "No Sub" ? "<i>No Sub</i>" : `<b>${finalReplacement}</b>`;
+         tbody.innerHTML += `
+            <tr class="prov-row">
+              <td><b>${classItem.class}</b> ${classItem.section}</td>
+              <td style="text-decoration:none;color:#FF7722;">${classItem.teacher}</td>
+              <td>${replacementHTML}</td>
+              <td>${classItem.timeSlot}</td>
+            </tr>
+         `;
+      });
 
+      const section = document.getElementById('provisionalRoutineSection');
+      section.style.display = 'block';
+      section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 
-      /* Media query for larger screens (desktops) */
-      @media (min-width: 768px) {
-        .card {
-          width: 260px;
-          /* Increase width on desktop */
-          height: 400px;
-          /* Increase height on desktop */
-          border-radius: 20px;
-          margin-right: 10px;
-        }
-
-        .card img {
-          width: 100%;
-          height: 100%;
-        }
-
-        .scrolling-content {
-          display: flex;
-          animation: scroll 50s linear infinite;
-        }
-      }
-
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
-        }
-
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-    </style>
-    <!-- Content Section -->
-    <div class="container">
-      <div class="row rescheduling-section">
-        <div class="col-md-12 col-lg-6">
-          <h2 style="font-size: 50px; font-weight: 800; text-align: left; margin-bottom: 20px;">
-            Why Choose Timora. ?
-          </h2>
-          <ul
-            style="font-size: 20px; font-weight: 300; text-align:left; margin: 0; padding-right: 15px; list-style:disc;line-height:1.2em;">
-            <li style="margin-bottom:5px;">
-              <b style="font-weight: 500;">Automated Scheduling:</b> <br>Say goodbye to manual adjustments with our
-              AI-driven scheduling algorithm.
-            </li>
-            <li style="margin-bottom: 15px;">
-              <b style="font-weight: 500;">Real-Time Updates:</b> <br>Get instant notifications and updates about class
-              changes.
-            </li>
-            <li style="margin-bottom: 15px;">
-              <b style="font-weight: 500;">Optimized Resource Allocation:</b> <br>Maximize the utilization of your
-              teaching
-              resources effectively.
-            </li>
-            <li style="margin-bottom: 15px;">
-              <b style="font-weight: 500;">Easy Integration:</b> <br>Seamlessly integrate with your existing school
-              management system.
-            </li>
-            <li style="margin-bottom: 15px;">
-              <b style="font-weight: 500;">Data-Driven Insights:</b> <br>Access analytics to monitor effectiveness and
-              make
-              informed decisions.
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-md-12 col-lg-6">
-          <img
-            src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_558,w_558/v1684887108/assets/76/baf1ea-385a-408c-846b-59211086196c/original/u4b-square.png"
-            alt="Rescheduling Algorithm">
-        </div>
-      </div>
-
-
-      <div class="row rescheduling-section"
-        style="display: flex; align-items: center; justify-content: center; height: 100vh;">
-        <div class="col-md-12 col-lg-6" style="display: flex; justify-content: center;">
-          <img
-            src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_558,w_558/v1684887108/assets/76/baf1ea-385a-408c-846b-59211086196c/original/u4b-square.png"
-            alt="Rescheduling Algorithm" style="max-width: 100%; height: auto;">
-        </div>
-        <div class="col-md-12 col-lg-6" style="padding: 0; display: flex; justify-content: center;">
-          <h2 style="font-size: 50px; font-weight: 800; text-align: left; margin-bottom: 20px;">
-            Why Choose Timora. ?
-          </h2>
-        </div>
-      </div>
-
-    </div>
-    <!-- Footer -->
-    <div class="footer"
-      style="background-color: #f0f0f0; color: #000000; text-align: center; padding: 20px; box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);">
-      <p style="margin: 0;">© 2024 Timora Inc. All rights reserved.</p>
-      <div class="social-icons" style="margin: 10px 0;">
-        <a href="https://www.facebook.com/Timora" target="_blank"
-          style="color: #000000; font-size: 24px; text-decoration: none; margin: 0 10px; transition: color 0.3s ease;">Facebook</a>
-        <a href="https://www.twitter.com/Timora" target="_blank"
-          style="color: #000000; font-size: 24px; text-decoration: none; margin: 0 10px; transition: color 0.3s ease;">Twitter</a>
-        <a href="https://www.linkedin.com/company/timora" target="_blank"
-          style="color: #000000; font-size: 24px; text-decoration: none; margin: 0 10px; transition: color 0.3s ease;">LinkedIn</a>
-      </div>
-    </div>
-
-
-    <script>
-      function toggleMenu() {
-        var navOptions = document.querySelector('.nav-options');
-        navOptions.classList.toggle('mobile-menu');
-      }
-
-    </script>
-    <script>
-      function performSearch() {
-        const query = document.getElementById("searchBar").value;
-        if (query) {
-          // You can define your search logic here. For now, it just redirects to a search URL with the query.
-          window.location.href = `https://www.example.com/search?q=${encodeURIComponent(query)}`;
-        } else {
-          alert("Please enter a search query.");
-        }
-      }
-    </script>
+    function printSection() {
+      const now = new Date();
+      document.getElementById('print-meta-data').innerText = `${now.toLocaleDateString()} | ${now.toLocaleTimeString()}`;
+      window.print();
+    }
+  </script>
 </body>
-
 </html>
